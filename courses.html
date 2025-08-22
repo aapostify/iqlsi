@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="دوره‌های آموزشی موسسه IQLSI - IQLSI Training Courses">
+    <meta name="keywords" content="IQLSI courses, psychometric training, statistical workshops">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://image-worker.cranko.cloud/placeholder/32/32?text=IQ&color=000066">
+    
+    <title>دوره‌های آموزشی | Training Courses - IQLSI</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#000066',
+                        secondary: '#0000AA',
+                        accent: '#4169E1'
+                    },
+                    fontFamily: {
+                        'vazir': ['Vazirmatn', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        [dir="rtl"] body { font-family: 'Vazirmatn', sans-serif; }
+        [dir="ltr"] body { font-family: 'Inter', sans-serif; }
+        
+        .gradient-primary {
+            background: linear-gradient(135deg, #000066 0%, #4169E1 100%);
+        }
+        
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,102,0.15);
+        }
+        
+        /* Smooth scroll */
+        html { scroll-behavior: smooth; }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #000066; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: #0000AA; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Language Switcher & Top Bar -->
+    <div class="bg-primary text-white py-2 hidden md:block">
+        <div class="container mx-auto px-4 flex justify-between items-center text-sm">
+            <div class="flex items-center gap-4">
+                <span><i class="fas fa-phone"></i> <span class="lang-fa">۰۲۱-۸۸۶۷۸۸۷۷</span><span class="lang-en hidden">+98-21-88678877</span></span>
+                <span><i class="fas fa-envelope"></i> info@iqlsi.com</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <button onclick="switchLanguage()" class="flex items-center gap-2 hover:text-accent transition">
+                    <i class="fas fa-globe"></i>
+                    <span class="lang-fa">English</span>
+                    <span class="lang-en hidden">فارسی</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <nav class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center gap-3">
+                    <img src="https://image-worker.cranko.cloud/placeholder/60/60?text=IQLSI&color=000066" alt="Logo" class="w-12 h-12 rounded-full">
+                    <div>
+                        <h1 class="text-primary font-bold text-lg lang-fa">موسسه IQLSI</h1>
+                        <h1 class="text-primary font-bold text-lg lang-en hidden">IQLSI Institute</h1>
+                        <p class="text-xs text-gray-500 lang-fa">سواد کمی و هوش آماری</p>
+                        <p class="text-xs text-gray-500 lang-en hidden">Quantitative Literacy & Statistical Intelligence</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <ul class="hidden lg:flex items-center gap-6">
+                    <li><a href="index.html" class="hover:text-primary transition lang-fa">خانه</a><a href="index.html" class="hover:text-primary transition lang-en hidden">Home</a></li>
+                    <li><a href="about.html" class="hover:text-primary transition lang-fa">درباره ما</a><a href="about.html" class="hover:text-primary transition lang-en hidden">About</a></li>
+                    <li><a href="services.html" class="hover:text-primary transition lang-fa">خدمات</a><a href="services.html" class="hover:text-primary transition lang-en hidden">Services</a></li>
+                    <li><a href="tests.html" class="hover:text-primary transition lang-fa">آزمون‌ها</a><a href="tests.html" class="hover:text-primary transition lang-en hidden">Tests</a></li>
+                    <li><a href="team.html" class="hover:text-primary transition lang-fa">تیم ما</a><a href="team.html" class="hover:text-primary transition lang-en hidden">Our Team</a></li>
+                    <li><a href="contact.html" class="hover:text-primary transition lang-fa">تماس</a><a href="contact.html" class="hover:text-primary transition lang-en hidden">Contact</a></li>
+                    <li>
+                        <a href="courses.html" class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary transition">
+                            <span class="lang-fa">ثبت‌نام آموزش</span>
+                            <span class="lang-en hidden">Register Course</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Mobile Menu Toggle -->
+                <button id="mobileMenuToggle" class="lg:hidden text-primary text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden lg:hidden pb-4">
+                <ul class="flex flex-col gap-3">
+                    <li><a href="index.html" class="block py-2 hover:text-primary transition">خانه</a></li>
+                    <li><a href="about.html" class="block py-2 hover:text-primary transition">درباره ما</a></li>
+                    <li><a href="services.html" class="block py-2 hover:text-primary transition">خدمات</a></li>
+                    <li><a href="tests.html" class="block py-2 hover:text-primary transition">آزمون‌ها</a></li>
+                    <li><a href="team.html" class="block py-2 hover:text-primary transition">تیم ما</a></li>
+                    <li><a href="contact.html" class="block py-2 hover:text-primary transition">تماس</a></li>
+                    <li><a href="courses.html" class="block py-2 text-primary font-semibold">ثبت‌نام آموزش</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gradient-primary text-white py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center" data-aos="fade-up">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 lang-fa">دوره‌های آموزشی تخصصی</h1>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 lang-en hidden">Professional Training Courses</h1>
+                <p class="text-xl opacity-90 lang-fa">ارتقای دانش و مهارت‌های شما در حوزه روان‌سنجی</p>
+                <p class="text-xl opacity-90 lang-en hidden">Enhance your knowledge and skills in psychometrics</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <section class="bg-gray-100 py-4">
+        <div class="container mx-auto px-4">
+            <nav class="text-sm">
+                <a href="index.html" class="text-gray-600 hover:text-primary transition">
+                    <span class="lang-fa">خانه</span>
+                    <span class="lang-en hidden">Home</span>
+                </a>
+                <span class="mx-2 text-gray-400">/</span>
+                <span class="text-primary font-semibold">
+                    <span class="lang-fa">دوره‌های آموزشی</span>
+                    <span class="lang-en hidden">Training Courses</span>
+                </span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Course Categories -->
+    <section class="py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center gap-4" data-aos="fade-up">
+                <button class="px-6 py-2 bg-primary text-white rounded-full hover:bg-secondary transition">
+                    <span class="lang-fa">همه دوره‌ها</span>
+                    <span class="lang-en hidden">All Courses</span>
+                </button>
+                <button class="px-6 py-2 bg-white text-primary border border-primary rounded-full hover:bg-primary hover:text-white transition">
+                    <span class="lang-fa">روان‌سنجی</span>
+                    <span class="lang-en hidden">Psychometrics</span>
+                </button>
+                <button class="px-6 py-2 bg-white text-primary border border-primary rounded-full hover:bg-primary hover:text-white transition">
+                    <span class="lang-fa">آمار و تحلیل داده</span>
+                    <span class="lang-en hidden">Statistics & Data Analysis</span>
+                </button>
+                <button class="px-6 py-2 bg-white text-primary border border-primary rounded-full hover:bg-primary hover:text-white transition">
+                    <span class="lang-fa">آزمون‌های روانشناختی</span>
+                    <span class="lang-en hidden">Psychological Tests</span>
+                </button>
+                <button class="px-6 py-2 bg-white text-primary border border-primary rounded-full hover:bg-primary hover:text-white transition">
+                    <span class="lang-fa">کارگاه‌های عملی</span>
+                    <span class="lang-en hidden">Practical Workshops</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Grid -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Course 1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-aos="fade-up">
+                    <div class="relative">
+                        <img src="https://image-worker.cranko.cloud/placeholder/400/250?text=Psychometrics&color=000066" alt="Course" class="w-full h-48 object-cover">
+                        <span class="absolute top-4 left-4 bg-accent text-white px-3 py-1 rounded-full text-sm">
+                            <span class="lang-fa">پیشرفته</span>
+                            <span class="lang-en hidden">Advanced</span>
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2 lang-fa">اصول و مبانی روان‌سنجی</h3>
+                        <h3 class="font-bold text-xl mb-2 lang-en hidden">Principles of Psychometrics</h3>
+                        <p class="text-gray-600 mb-4 lang-fa">آشنایی کامل با مفاهیم پایه‌ای روان‌سنجی، نظریه‌های اندازه‌گیری و روش‌های ارزیابی</p>
+                        <p class="text-gray-600 mb-4 lang-en hidden">Complete understanding of basic psychometric concepts, measurement theories and assessment methods</p>
+                        
+                        <div class="flex items-center gap-4 mb-4 text-sm text-gray-500">
+                            <span><i class="fas fa-clock"></i> <span class="lang-fa">۴۰ ساعت</span><span class="lang-en hidden">40 hours</span></span>
+                            <span><i class="fas fa-users"></i> <span class="lang-fa">۱۵ نفر</span><span class="lang-en hidden">15 people</span></span>
+                        </div>
+                        
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-primary">
+                                <span class="lang-fa">۳,۵۰۰,۰۰۰ تومان</span>
+                                <span class="lang-en hidden">$250</span>
+                            </span>
+                            <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary transition">
+                                <span class="lang-fa">ثبت‌نام</span>
+                                <span class="lang-en hidden">Register</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative">
+                        <img src="https://image-worker.cranko.cloud/placeholder/400/250?text=SPSS+Workshop&color=000066" alt="Course" class="w-full h-48 object-cover">
+                        <span class="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm">
+                            <span class="lang-fa">مبتدی</span>
+                            <span class="lang-en hidden">Beginner</span>
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2 lang-fa">کارگاه عملی SPSS</h3>
+                        <h3 class="font-bold text-xl mb-2 lang-en hidden">SPSS Practical Workshop</h3>
+                        <p class="text-gray-600 mb-4 lang-fa">آموزش جامع نرم‌افزار SPSS برای تحلیل داده‌های آماری و روان‌سنجی</p>
+                        <p class="text-gray-600 mb-4 lang-en hidden">Comprehensive SPSS software training for statistical and psychometric data analysis</p>
+                        
+                        <div class="flex items-center gap-4 mb-4 text-sm text-gray-500">
+                            <span><i class="fas fa-clock"></i> <span class="lang-fa">۲۴ ساعت</span><span class="lang-en hidden">24 hours</span></span>
+                            <span><i class="fas fa-users"></i> <span class="lang-fa">۲۰ نفر</span><span class="lang-en hidden">20 people</span></span>
+                        </div>
+                        
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-primary">
+                                <span class="lang-fa">۲,۸۰۰,۰۰۰ تومان</span>
+                                <span class="lang-en hidden">$200</span>
+                            </span>
+                            <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary transition">
+                                <span class="lang-fa">ثبت‌نام</span>
+                                <span class="lang-en hidden">Register</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 3 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative">
+                        <img src="https://image-worker.cranko.cloud/placeholder/400/250?text=Test+Design&color=000066" alt="Course" class="w-full h-48 object-cover">
+                        <span class="absolute top-4 left-4 bg-orange-500 text-white px-3 py-1 rounded-full text-sm">
+                            <span class="lang-fa">متوسط</span>
+                            <span class="lang-en hidden">Intermediate</span>
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2 lang-fa">طراحی و اعتباریابی آزمون</h3>
+                        <h3 class="font-bold text-xl mb-2 lang-en hidden">Test Design and Validation</h3>
+                        <p class="text-gray-600 mb-4 lang-fa">آموزش مراحل طراحی، ساخت و اعتباریابی آزمون‌های روانشناختی</p>
+                        <p class="text-gray-600 mb-4 lang-en hidden">Training on designing, developing and validating psychological tests</p>
+                        
+                        <div class="flex items-center gap-4 mb-4 text-sm text-gray-500">
+                            <span><i class="fas fa-clock"></i> <span class="lang-fa">۳۲ ساعت</span><span class="lang-en hidden">32 hours</span></span>
+                            <span><i class="fas fa-users"></i> <span class="lang-fa">۱۲ نفر</span><span class="lang-en hidden">12 people</span></span>
+                        </div>
+                        
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-primary">
+                                <span class="lang-fa">۴,۲۰۰,۰۰۰ تومان</span>
+                                <span class="lang-en hidden">$300</span>
+                            </span>
+                            <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary transition">
+                                <span class="lang-fa">ثبت‌نام</span>
+                                <span class="lang-en hidden">Register</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 4 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-aos="fade-up">
+                    <div class="relative">
+                        <img src="https://image-worker.cranko.cloud/placeholder/400/250?text=IQ+Testing&color=000066" alt="Course" class="w-full h-48 object-cover">
+                        <span class="absolute top-4 left-4 bg-accent text-white px-3 py-1 rounded-full text-sm">
+                            <span class="lang-fa">پیشرفته</span>
+                            <span class="lang-en hidden">Advanced</span>
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2 lang-fa">آزمون‌های هوش و استعداد</h3>
+                        <h3 class="font-bold text-xl mb-2 lang-en hidden">Intelligence and Aptitude Tests</h3>
+                        <p class="text-gray-600 mb-4 lang-fa">آموزش اجرا و تفسیر آزمون‌های هوش وکسلر، استنفورد-بینه و ریون</p>
+                        <p class="text-gray-600 mb-4 lang-en hidden">Training on administering and interpreting Wechsler, Stanford-Binet and Raven tests</p>
+                        
+                        <div class="flex items-center gap-4 mb-4 text-sm text-gray-500">
+                            <span><i class="fas fa-clock"></i> <span class="lang-fa">۴۸ ساعت</span><span class="lang-en hidden">48 hours</span></span>
+                            <span><i class="fas fa-users"></i> <span class="lang-fa">۱۰ نفر</span><span class="lang-en hidden">10 people</span></span>
+                        </div>
+                        
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-primary">
+                                <span class="lang-fa">۵,۵۰۰,۰۰۰ تومان</span>
+                                <span class="lang-en hidden">$400</span>
+                            </span>
+                            <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary transition">
+                                <span class="lang-fa">ثبت‌نام</span>
+                                <span class="lang-en hidden">Register</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 5 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative">
+                        <img src="https://image-worker.cranko.cloud/placeholder/400/250?text=R+Programming&color=000066" alt="Course" class="w-full h-48 object-cover">
+                        <span class="absolute top-4 left-4 bg-orange-500 text-white px-3 py-1 rounded-full text-sm">
+                            <span class="lang-fa">متوسط</span>
+                            <span class="lang-en hidden">Intermediate</span>
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2 lang-fa">برنامه‌نویسی R برای روان‌سنجی</h3>
+                        <h3 class="font-bold text-xl mb-2 lang-en hidden">R Programming for Psychometrics</h3>
+                        <p class="text-gray-600 mb-4 lang-fa">آموزش زبان برنامه‌نویسی R برای تحلیل‌های آماری پیشرفته</p>
+                        <p class="text-gray-600 mb-4 lang-en hidden">Learning R programming language for advanced statistical analysis</p>
+                        
+                        <div class="flex items-center gap-4 mb-4 text-sm text-gray-500">
+                            <span><i class="fas fa-clock"></i> <span class="lang-fa">۳۶ ساعت</span><span class="lang-en hidden">36 hours</span></span>
+                            <span><i class="fas fa-users"></i> <span class="lang-fa">۱۵ نفر</span><span class="lang-en hidden">15 people</span></span>
+                        </div>
+                        
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-primary">
+                                <span class="lang-fa">۳,۸۰۰,۰۰۰ تومان</span>
+                                <span class="lang-en hidden">$275</span>
+                            </span>
+                            <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary transition">
+                                <span class="lang-fa">ثبت‌نام</span>
+                                <span class="lang-en hidden">Register</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 6 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative">
+                        <img src="https://image-worker.cranko.cloud/placeholder/400/250?text=Child+Assessment&color=000066" alt="Course" class="w-full h-48 object-cover">
+                        <span class="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm">
+                            <span class="lang-fa">مبتدی</span>
+                            <span class="lang-en hidden">Beginner</span>
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2 lang-fa">ارزیابی رشد کودک</h3>
+                        <h3 class="font-bold text-xl mb-2 lang-en hidden">Child Development Assessment</h3>
+                        <p class="text-gray-600 mb-4 lang-fa">آموزش ابزارها و روش‌های ارزیابی رشد شناختی و عاطفی کودکان</p>
+                        <p class="text-gray-600 mb-4 lang-en hidden">Training on tools and methods for assessing children's cognitive and emotional development</p>
+                        
+                        <div class="flex items-center gap-4 mb-4 text-sm text-gray-500">
+                            <span><i class="fas fa-clock"></i> <span class="lang-fa">۲۸ ساعت</span><span class="lang-en hidden">28 hours</span></span>
+                            <span><i class="fas fa-users"></i> <span class="lang-fa">۱۸ نفر</span><span class="lang-en hidden">18 people</span></span>
+                        </div>
+                        
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-primary">
+                                <span class="lang-fa">۳,۲۰۰,۰۰۰ تومان</span>
+                                <span class="lang-en hidden">$230</span>
+                            </span>
+                            <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary transition">
+                                <span class="lang-fa">ثبت‌نام</span>
+                                <span class="lang-en hidden">Register</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Online Courses Section -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-primary mb-4 lang-fa">دوره‌های آنلاین</h2>
+                <h2 class="text-3xl font-bold text-primary mb-4 lang-en hidden">Online Courses</h2>
+                <p class="text-gray-600 lang-fa">یادگیری در هر زمان و هر مکان</p>
+                <p class="text-gray-600 lang-en hidden">Learn anytime, anywhere</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Online Course 1 -->
+                <div class="bg-white rounded-lg shadow-md p-6 text-center card-hover" data-aos="fade-up">
+                    <i class="fas fa-laptop text-4xl text-primary mb-4"></i>
+                    <h3 class="font-semibold text-lg mb-2 lang-fa">مقدمه‌ای بر روان‌سنجی</h3>
+                    <h3 class="font-semibold text-lg mb-2 lang-en hidden">Introduction to Psychometrics</h3>
+                    <p class="text-gray-600 text-sm mb-4 lang-fa">۸ ساعت ویدیو آموزشی</p>
+                    <p class="text-gray-600 text-sm mb-4 lang-en hidden">8 hours of video content</p>
+                    <button class="text-accent hover:text-primary transition">
+                        <span class="lang-fa">مشاهده دوره</span>
+                        <span class="lang-en hidden">View Course</span>
+                    </button>
+                </div>
+
+                <!-- Online Course 2 -->
+                <div class="bg-white rounded-lg shadow-md p-6 text-center card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-chart-bar text-4xl text-primary mb-4"></i>
+                    <h3 class="font-semibold text-lg mb-2 lang-fa">آمار توصیفی</h3>
+                    <h3 class="font-semibold text-lg mb-2 lang-en hidden">Descriptive Statistics</h3>
+                    <p class="text-gray-600 text-sm mb-4 lang-fa">۶ ساعت ویدیو آموزشی</p>
+                    <p class="text-gray-600 text-sm mb-4 lang-en hidden">6 hours of video content</p>
+                    <button class="text-accent hover:text-primary transition">
+                        <span class="lang-fa">مشاهده دوره</span>
+                        <span class="lang-en hidden">View Course</span>
+                    </button>
+                </div>
+
+                <!-- Online Course 3 -->
+                <div class="bg-white rounded-lg shadow-md p-6 text-center card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-brain text-4xl text-primary mb-4"></i>
+                    <h3 class="font-semibold text-lg mb-2 lang-fa">نظریه‌های هوش</h3>
+                    <h3 class="font-semibold text-lg mb-2 lang-en hidden">Theories of Intelligence</h3>
+                    <p class="text-gray-600 text-sm mb-4 lang-fa">۱۰ ساعت ویدیو آموزشی</p>
+                    <p class="text-gray-600 text-sm mb-4 lang-en hidden">10 hours of video content</p>
+                    <button class="text-accent hover:text-primary transition">
+                        <span class="lang-fa">مشاهده دوره</span>
+                        <span class="lang-en hidden">View Course</span>
+                    </button>
+                </div>
+
+                <!-- Online Course 4 -->
+                <div class="bg-white rounded-lg shadow-md p-6 text-center card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-file-alt text-4xl text-primary mb-4"></i>
+                    <h3 class="font-semibold text-lg mb-2 lang-fa">گزارش‌نویسی آزمون</h3>
+                    <h3 class="font-semibold text-lg mb-2 lang-en hidden">Test Report Writing</h3>
+                    <p class="text-gray-600 text-sm mb-4 lang-fa">۴ ساعت ویدیو آموزشی</p>
+                    <p class="text-gray-600 text-sm mb-4 lang-en hidden">4 hours of video content</p>
+                    <button class="text-accent hover:text-primary transition">
+                        <span class="lang-fa">مشاهده دوره</span>
+                        <span class="lang-en hidden">View Course</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="gradient-primary text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4 lang-fa">نیاز به مشاوره دارید؟</h2>
+            <h2 class="text-3xl font-bold mb-4 lang-en hidden">Need Consultation?</h2>
+            <p class="text-xl mb-8 opacity-90 lang-fa">تیم ما آماده پاسخگویی به سوالات شما و راهنمایی در انتخاب دوره مناسب است</p>
+            <p class="text-xl mb-8 opacity-90 lang-en hidden">Our team is ready to answer your questions and guide you in choosing the right course</p>
+            <a href="contact.html" class="inline-block bg-white text-primary px-8 py-3 rounded-lg hover:bg-gray-100 transition font-semibold">
+                <span class="lang-fa">تماس با ما</span>
+                <span class="lang-en hidden">Contact Us</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- About -->
+                <div>
+                    <h3 class="font-bold text-lg mb-4 lang-fa">درباره IQLSI</h3>
+                    <h3 class="font-bold text-lg mb-4 lang-en hidden">About IQLSI</h3>
+                    <p class="text-gray-300 text-sm lang-fa">موسسه پیشرو در ارائه خدمات روان‌سنجی و ارزیابی‌های تخصصی</p>
+                    <p class="text-gray-300 text-sm lang-en hidden">Leading institute in psychometric services and specialized assessments</p>
+                    <div class="flex gap-3 mt-4">
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-linkedin text-xl"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="font-bold text-lg mb-4 lang-fa">دسترسی سریع</h3>
+                    <h3 class="font-bold text-lg mb-4 lang-en hidden">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="text-gray-300 hover:text-white transition">خانه</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-white transition">درباره ما</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-white transition">خدمات</a></li>
+                        <li><a href="courses.html" class="text-gray-300 hover:text-white transition">دوره‌ها</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h3 class="font-bold text-lg mb-4 lang-fa">خدمات</h3>
+                    <h3 class="font-bold text-lg mb-4 lang-en hidden">Services</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li class="text-gray-300 lang-fa">آزمون‌های روانشناختی</li>
+                        <li class="text-gray-300 lang-en hidden">Psychological Tests</li>
+                        <li class="text-gray-300 lang-fa">مشاوره تخصصی</li>
+                        <li class="text-gray-300 lang-en hidden">Expert Consultation</li>
+                        <li class="text-gray-300 lang-fa">تحلیل داده</li>
+                        <li class="text-gray-300 lang-en hidden">Data Analysis</li>
+                        <li class="text-gray-300 lang-fa">آموزش و کارگاه</li>
+                        <li class="text-gray-300 lang-en hidden">Training & Workshops</li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h3 class="font-bold text-lg mb-4 lang-fa">تماس با ما</h3>
+                    <h3 class="font-bold text-lg mb-4 lang-en hidden">Contact Us</h3>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><i class="fas fa-map-marker-alt ml-2"></i> <span class="lang-fa">تهران، خیابان ولیعصر</span><span class="lang-en hidden">Tehran, Valiasr St.</span></li>
+                        <li><i class="fas fa-phone ml-2"></i> <span class="lang-fa">۰۲۱-۸۸۶۷۸۸۷۷</span><span class="lang-en hidden">+98-21-88678877</span></li>
+                        <li><i class="fas fa-envelope ml-2"></i> info@iqlsi.com</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
+                <p class="lang-fa">© ۲۰۲۴ موسسه IQLSI. تمامی حقوق محفوظ است.</p>
+                <p class="lang-en hidden">© 2024 IQLSI Institute. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Language Switcher with localStorage
+        let currentLang = localStorage.getItem('selectedLanguage') || 'fa';
+        
+        // Apply saved language on page load
+        function applyLanguage() {
+            document.documentElement.lang = currentLang;
+            document.documentElement.dir = currentLang === 'fa' ? 'rtl' : 'ltr';
+            
+            // Toggle language elements
+            document.querySelectorAll('.lang-fa').forEach(el => {
+                el.classList.toggle('hidden', currentLang !== 'fa');
+            });
+            document.querySelectorAll('.lang-en').forEach(el => {
+                el.classList.toggle('hidden', currentLang !== 'en');
+            });
+        }
+        
+        // Apply language on page load
+        applyLanguage();
+        
+        function switchLanguage() {
+            currentLang = currentLang === 'fa' ? 'en' : 'fa';
+            localStorage.setItem('selectedLanguage', currentLang);
+            applyLanguage();
+        }
+    </script>
+</body>
+</html>
