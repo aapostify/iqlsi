@@ -579,11 +579,11 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Language Switcher
-        let currentLang = 'fa';
+        // Language Switcher with localStorage
+        let currentLang = localStorage.getItem('selectedLanguage') || 'fa';
         
-        function switchLanguage() {
-            currentLang = currentLang === 'fa' ? 'en' : 'fa';
+        // Apply saved language on page load
+        function applyLanguage() {
             document.documentElement.lang = currentLang;
             document.documentElement.dir = currentLang === 'fa' ? 'rtl' : 'ltr';
             
@@ -601,6 +601,15 @@
             } else {
                 document.body.style.fontFamily = "'Vazirmatn', sans-serif";
             }
+        }
+        
+        // Apply language on page load
+        applyLanguage();
+        
+        function switchLanguage() {
+            currentLang = currentLang === 'fa' ? 'en' : 'fa';
+            localStorage.setItem('selectedLanguage', currentLang);
+            applyLanguage();
         }
 
         // Back to Top Button
