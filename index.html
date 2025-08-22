@@ -487,6 +487,9 @@
                     </div>
                 </div>
                 <div class="swiper-pagination"></div>
+                <!-- Navigation buttons for tests slider -->
+                <div class="swiper-button-next text-primary"></div>
+                <div class="swiper-button-prev text-primary"></div>
             </div>
         </div>
     </section>
@@ -787,6 +790,10 @@
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
+            },
+            navigation: {
+                nextEl: '.testsSwiper .swiper-button-next',
+                prevEl: '.testsSwiper .swiper-button-prev',
             },
             breakpoints: {
                 640: {

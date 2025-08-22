@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="درباره موسسه IQLSI - Institute of Quantitative Literacy and Statistical Intelligence">
+    <meta name="keywords" content="IQLSI, quantitative literacy, statistical intelligence, data science, analytics">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://image-worker.cranko.cloud/placeholder/32/32?text=IQ&color=000066">
+    
+    <title>درباره ما | About IQLSI</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#000066',
+                        secondary: '#0000AA',
+                        accent: '#4169E1'
+                    },
+                    fontFamily: {
+                        'vazir': ['Vazirmatn', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        [dir="rtl"] body { font-family: 'Vazirmatn', sans-serif; }
+        [dir="ltr"] body { font-family: 'Inter', sans-serif; }
+        
+        .gradient-primary {
+            background: linear-gradient(135deg, #000066 0%, #4169E1 100%);
+        }
+        
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,102,0.15);
+        }
+        
+        /* Smooth scroll */
+        html { scroll-behavior: smooth; }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #000066; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: #0000AA; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Language Switcher & Top Bar -->
+    <div class="bg-primary text-white py-2 hidden md:block">
+        <div class="container mx-auto px-4 flex justify-between items-center text-sm">
+            <div class="flex items-center gap-4">
+                <span><i class="fas fa-phone"></i> <span class="lang-fa">۰۲۱-۸۸۶۷۸۸۷۷</span><span class="lang-en hidden">+98-21-88678877</span></span>
+                <span><i class="fas fa-envelope"></i> info@iqlsi.com</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <button onclick="switchLanguage()" class="flex items-center gap-2 hover:text-accent transition">
+                    <i class="fas fa-globe"></i>
+                    <span class="lang-fa">English</span>
+                    <span class="lang-en hidden">فارسی</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <nav class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center gap-3">
+                    <img src="https://image-worker.cranko.cloud/placeholder/60/60?text=IQLSI&color=000066" alt="Logo" class="w-12 h-12 rounded-full">
+                    <div>
+                        <h1 class="text-primary font-bold text-lg lang-fa">موسسه IQLSI</h1>
+                        <h1 class="text-primary font-bold text-lg lang-en hidden">IQLSI Institute</h1>
+                        <p class="text-xs text-gray-500 lang-fa">سواد کمی و هوش آماری</p>
+                        <p class="text-xs text-gray-500 lang-en hidden">Quantitative Literacy & Statistical Intelligence</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <ul class="hidden lg:flex items-center gap-6">
+                    <li><a href="index.html" class="hover:text-primary transition lang-fa">خانه</a><a href="index.html" class="hover:text-primary transition lang-en hidden">Home</a></li>
+                    <li><a href="about.html" class="text-primary font-semibold lang-fa">درباره ما</a><a href="about.html" class="text-primary font-semibold lang-en hidden">About</a></li>
+                    <li><a href="services.html" class="hover:text-primary transition lang-fa">خدمات</a><a href="services.html" class="hover:text-primary transition lang-en hidden">Services</a></li>
+                    <li><a href="tests.html" class="hover:text-primary transition lang-fa">آزمون‌ها</a><a href="tests.html" class="hover:text-primary transition lang-en hidden">Tests</a></li>
+                    <li><a href="team.html" class="hover:text-primary transition lang-fa">تیم ما</a><a href="team.html" class="hover:text-primary transition lang-en hidden">Our Team</a></li>
+                    <li><a href="contact.html" class="hover:text-primary transition lang-fa">تماس</a><a href="contact.html" class="hover:text-primary transition lang-en hidden">Contact</a></li>
+                    <li>
+                        <a href="courses.html" class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary transition">
+                            <span class="lang-fa">ثبت‌نام آموزش</span>
+                            <span class="lang-en hidden">Register Course</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Mobile Menu Toggle -->
+                <button id="mobileMenuToggle" class="lg:hidden text-primary text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden lg:hidden pb-4">
+                <ul class="flex flex-col gap-3">
+                    <li><a href="index.html" class="block py-2 hover:text-primary transition">خانه</a></li>
+                    <li><a href="about.html" class="block py-2 text-primary font-semibold">درباره ما</a></li>
+                    <li><a href="services.html" class="block py-2 hover:text-primary transition">خدمات</a></li>
+                    <li><a href="tests.html" class="block py-2 hover:text-primary transition">آزمون‌ها</a></li>
+                    <li><a href="team.html" class="block py-2 hover:text-primary transition">تیم ما</a></li>
+                    <li><a href="contact.html" class="block py-2 hover:text-primary transition">تماس</a></li>
+                    <li><a href="courses.html" class="block py-2 hover:text-primary transition">ثبت‌نام آموزش</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gradient-primary text-white py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center" data-aos="fade-up">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 lang-fa">درباره موسسه IQLSI</h1>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 lang-en hidden">About IQLSI Institute</h1>
+                <p class="text-xl lang-fa">پیشرو در آموزش سواد کمی و هوش آماری</p>
+                <p class="text-xl lang-en hidden">Leading in Quantitative Literacy and Statistical Intelligence Education</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <section class="bg-gray-100 py-4">
+        <div class="container mx-auto px-4">
+            <nav class="flex items-center gap-2 text-sm">
+                <a href="index.html" class="text-gray-600 hover:text-primary transition">
+                    <span class="lang-fa">خانه</span>
+                    <span class="lang-en hidden">Home</span>
+                </a>
+                <span class="text-gray-400">/</span>
+                <span class="text-primary font-semibold">
+                    <span class="lang-fa">درباره ما</span>
+                    <span class="lang-en hidden">About Us</span>
+                </span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-12 items-center mb-20">
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl font-bold text-primary mb-6 lang-fa">معرفی موسسه</h2>
+                    <h2 class="text-3xl font-bold text-primary mb-6 lang-en hidden">Institute Introduction</h2>
+                    <p class="text-lg text-gray-700 mb-4 leading-relaxed lang-fa">
+                        موسسه سواد کمی و هوش آماری (IQLSI) با هدف ارتقای سطح دانش آماری و تحلیل داده در جامعه تأسیس شده است. ما معتقدیم که در عصر اطلاعات، توانایی درک و تحلیل داده‌ها یکی از مهارت‌های کلیدی برای موفقیت در هر حوزه‌ای است.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-4 leading-relaxed lang-en hidden">
+                        The Institute of Quantitative Literacy and Statistical Intelligence (IQLSI) was established with the aim of enhancing statistical knowledge and data analysis skills in society. We believe that in the information age, the ability to understand and analyze data is one of the key skills for success in any field.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-4 leading-relaxed lang-fa">
+                        با بیش از یک دهه تجربه در حوزه آموزش و پژوهش، ما به ارائه خدمات آموزشی با کیفیت بالا، انجام پروژه‌های تحقیقاتی و مشاوره به سازمان‌ها و افراد می‌پردازیم.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-4 leading-relaxed lang-en hidden">
+                        With over a decade of experience in education and research, we provide high-quality educational services, conduct research projects, and offer consulting to organizations and individuals.
+                    </p>
+                </div>
+                <div data-aos="fade-left">
+                    <img src="https://image-worker.cranko.cloud/placeholder/600/400?text=IQLSI+Building&color=000066" alt="IQLSI Building" class="rounded-lg shadow-xl w-full">
+                </div>
+            </div>
+
+            <!-- Mission & Vision -->
+            <div class="grid md:grid-cols-2 gap-8 mb-20">
+                <div class="bg-white rounded-lg shadow-lg p-8" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary mb-4 lang-fa">ماموریت ما</h3>
+                    <h3 class="text-2xl font-bold text-primary mb-4 lang-en hidden">Our Mission</h3>
+                    <p class="text-gray-700 lang-fa">
+                        ارائه آموزش‌های کاربردی و با کیفیت در زمینه آمار، تحلیل داده و هوش تجاری به منظور توانمندسازی افراد و سازمان‌ها در تصمیم‌گیری مبتنی بر داده.
+                    </p>
+                    <p class="text-gray-700 lang-en hidden">
+                        Providing practical and high-quality education in statistics, data analysis, and business intelligence to empower individuals and organizations in data-driven decision making.
+                    </p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-8" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary mb-4 lang-fa">چشم‌انداز ما</h3>
+                    <h3 class="text-2xl font-bold text-primary mb-4 lang-en hidden">Our Vision</h3>
+                    <p class="text-gray-700 lang-fa">
+                        تبدیل شدن به مرجع اصلی آموزش سواد کمی و هوش آماری در منطقه و ایجاد جامعه‌ای که در آن همه افراد توانایی درک و استفاده از داده‌ها را داشته باشند.
+                    </p>
+                    <p class="text-gray-700 lang-en hidden">
+                        To become the leading reference for quantitative literacy and statistical intelligence education in the region and create a society where everyone has the ability to understand and use data.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Values -->
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-primary mb-4 lang-fa">ارزش‌های ما</h2>
+                <h2 class="text-3xl font-bold text-primary mb-4 lang-en hidden">Our Values</h2>
+                <div class="w-24 h-1 bg-accent mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-6 mb-20">
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-primary text-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-graduation-cap text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2 lang-fa">تعالی علمی</h4>
+                    <h4 class="font-bold text-lg mb-2 lang-en hidden">Academic Excellence</h4>
+                    <p class="text-gray-600 text-sm lang-fa">تعهد به ارائه بالاترین کیفیت آموزشی</p>
+                    <p class="text-gray-600 text-sm lang-en hidden">Commitment to highest educational quality</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-primary text-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-lightbulb text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2 lang-fa">نوآوری</h4>
+                    <h4 class="font-bold text-lg mb-2 lang-en hidden">Innovation</h4>
+                    <p class="text-gray-600 text-sm lang-fa">استفاده از روش‌های نوین آموزشی</p>
+                    <p class="text-gray-600 text-sm lang-en hidden">Using innovative teaching methods</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-primary text-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-handshake text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2 lang-fa">صداقت</h4>
+                    <h4 class="font-bold text-lg mb-2 lang-en hidden">Integrity</h4>
+                    <p class="text-gray-600 text-sm lang-fa">شفافیت در تمام تعاملات</p>
+                    <p class="text-gray-600 text-sm lang-en hidden">Transparency in all interactions</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="bg-primary text-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-users text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2 lang-fa">مشارکت</h4>
+                    <h4 class="font-bold text-lg mb-2 lang-en hidden">Collaboration</h4>
+                    <p class="text-gray-600 text-sm lang-fa">کار تیمی و همکاری موثر</p>
+                    <p class="text-gray-600 text-sm lang-en hidden">Teamwork and effective cooperation</p>
+                </div>
+            </div>
+
+            <!-- Timeline -->
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-primary mb-4 lang-fa">مسیر توسعه</h2>
+                <h2 class="text-3xl font-bold text-primary mb-4 lang-en hidden">Development Journey</h2>
+                <div class="w-24 h-1 bg-accent mx-auto"></div>
+            </div>
+
+            <div class="relative">
+                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gray-300"></div>
+                
+                <div class="space-y-12">
+                    <div class="flex items-center" data-aos="fade-right">
+                        <div class="w-1/2 text-right pr-8">
+                            <h3 class="text-xl font-bold text-primary mb-2">2010</h3>
+                            <p class="text-gray-700 lang-fa">تأسیس موسسه و آغاز فعالیت</p>
+                            <p class="text-gray-700 lang-en hidden">Institute establishment and start of operations</p>
+                        </div>
+                        <div class="w-8 h-8 bg-primary rounded-full absolute left-1/2 transform -translate-x-1/2"></div>
+                        <div class="w-1/2 pl-8">
+                            <img src="https://image-worker.cranko.cloud/placeholder/200/150?text=2010&color=000066" alt="2010" class="rounded-lg shadow">
+                        </div>
+                    </div>
+
+                    <div class="flex items-center" data-aos="fade-left">
+                        <div class="w-1/2 text-right pr-8">
+                            <img src="https://image-worker.cranko.cloud/placeholder/200/150?text=2015&color=4169E1" alt="2015" class="rounded-lg shadow ml-auto">
+                        </div>
+                        <div class="w-8 h-8 bg-primary rounded-full absolute left-1/2 transform -translate-x-1/2"></div>
+                        <div class="w-1/2 pl-8">
+                            <h3 class="text-xl font-bold text-primary mb-2">2015</h3>
+                            <p class="text-gray-700 lang-fa">راه‌اندازی دوره‌های تخصصی آمار</p>
+                            <p class="text-gray-700 lang-en hidden">Launch of specialized statistics courses</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center" data-aos="fade-right">
+                        <div class="w-1/2 text-right pr-8">
+                            <h3 class="text-xl font-bold text-primary mb-2">2020</h3>
+                            <p class="text-gray-700 lang-fa">توسعه پلتفرم آموزش آنلاین</p>
+                            <p class="text-gray-700 lang-en hidden">Development of online learning platform</p>
+                        </div>
+                        <div class="w-8 h-8 bg-primary rounded-full absolute left-1/2 transform -translate-x-1/2"></div>
+                        <div class="w-1/2 pl-8">
+                            <img src="https://image-worker.cranko.cloud/placeholder/200/150?text=2020&color=000066" alt="2020" class="rounded-lg shadow">
+                        </div>
+                    </div>
+
+                    <div class="flex items-center" data-aos="fade-left">
+                        <div class="w-1/2 text-right pr-8">
+                            <img src="https://image-worker.cranko.cloud/placeholder/200/150?text=2024&color=4169E1" alt="2024" class="rounded-lg shadow ml-auto">
+                        </div>
+                        <div class="w-8 h-8 bg-primary rounded-full absolute left-1/2 transform -translate-x-1/2"></div>
+                        <div class="w-1/2 pl-8">
+                            <h3 class="text-xl font-bold text-primary mb-2">2024</h3>
+                            <p class="text-gray-700 lang-fa">همکاری با دانشگاه‌های معتبر بین‌المللی</p>
+                            <p class="text-gray-700 lang-en hidden">Collaboration with prestigious international universities</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics -->
+    <section class="gradient-primary text-white py-20">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 text-center">
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-5xl font-bold mb-2">500+</div>
+                    <p class="text-xl lang-fa">دوره آموزشی</p>
+                    <p class="text-xl lang-en hidden">Training Courses</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-5xl font-bold mb-2">10,000+</div>
+                    <p class="text-xl lang-fa">دانش‌آموخته</p>
+                    <p class="text-xl lang-en hidden">Graduates</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-5xl font-bold mb-2">50+</div>
+                    <p class="text-xl lang-fa">مدرس متخصص</p>
+                    <p class="text-xl lang-en hidden">Expert Instructors</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-5xl font-bold mb-2">95%</div>
+                    <p class="text-xl lang-fa">رضایت مشتریان</p>
+                    <p class="text-xl lang-en hidden">Customer Satisfaction</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- About -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 lang-fa">درباره IQLSI</h3>
+                    <h3 class="text-xl font-bold mb-4 lang-en hidden">About IQLSI</h3>
+                    <p class="text-gray-300 lang-fa">موسسه سواد کمی و هوش آماری، پیشرو در آموزش تحلیل داده</p>
+                    <p class="text-gray-300 lang-en hidden">Institute of Quantitative Literacy and Statistical Intelligence, leading in data analysis education</p>
+                    <div class="flex gap-4 mt-4">
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-linkedin text-xl"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 lang-fa">لینک‌های سریع</h3>
+                    <h3 class="text-xl font-bold mb-4 lang-en hidden">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-white transition">خانه</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-white transition">درباره ما</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-white transition">خدمات</a></li>
+                        <li><a href="courses.html" class="text-gray-300 hover:text-white transition">دوره‌ها</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 lang-fa">تماس با ما</h3>
+                    <h3 class="text-xl font-bold mb-4 lang-en hidden">Contact Us</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><i class="fas fa-map-marker-alt ml-2"></i> تهران، خیابان آزادی</li>
+                        <li><i class="fas fa-phone ml-2"></i> ۰۲۱-۸۸۶۷۸۸۷۷</li>
+                        <li><i class="fas fa-envelope ml-2"></i> info@iqlsi.com</li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 lang-fa">خبرنامه</h3>
+                    <h3 class="text-xl font-bold mb-4 lang-en hidden">Newsletter</h3>
+                    <p class="text-gray-300 mb-4 lang-fa">برای دریافت آخرین اخبار ثبت نام کنید</p>
+                    <p class="text-gray-300 mb-4 lang-en hidden">Subscribe for latest news</p>
+                    <form class="flex">
+                        <input type="email" placeholder="ایمیل شما" class="px-4 py-2 rounded-r-lg text-gray-800 flex-1">
+                        <button type="submit" class="bg-accent hover:bg-opacity-90 px-4 py-2 rounded-l-lg transition">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-300 lang-fa">© ۱۴۰۳ موسسه IQLSI. تمامی حقوق محفوظ است.</p>
+                <p class="text-gray-300 lang-en hidden">© 2024 IQLSI Institute. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-6 left-6 bg-primary text-white w-12 h-12 rounded-full shadow-lg hover:bg-secondary transition opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Language Switcher
+        let currentLang = 'fa';
+        
+        function switchLanguage() {
+            currentLang = currentLang === 'fa' ? 'en' : 'fa';
+            document.documentElement.lang = currentLang;
+            document.documentElement.dir = currentLang === 'fa' ? 'rtl' : 'ltr';
+            
+            // Toggle language elements
+            document.querySelectorAll('.lang-fa').forEach(el => {
+                el.classList.toggle('hidden', currentLang !== 'fa');
+            });
+            document.querySelectorAll('.lang-en').forEach(el => {
+                el.classList.toggle('hidden', currentLang !== 'en');
+            });
+            
+            // Update body font
+            if (currentLang === 'en') {
+                document.body.style.fontFamily = "'Inter', sans-serif";
+            } else {
+                document.body.style.fontFamily = "'Vazirmatn', sans-serif";
+            }
+        }
+
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.remove('opacity-0', 'invisible');
+                backToTop.classList.add('opacity-100', 'visible');
+            } else {
+                backToTop.classList.add('opacity-0', 'invisible');
+                backToTop.classList.remove('opacity-100', 'visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Form Submission (Demo)
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert(currentLang === 'fa' ? 'فرم با موفقیت ارسال شد!' : 'Form submitted successfully!');
+            });
+        });
+    </script>
+</body>
+</html>

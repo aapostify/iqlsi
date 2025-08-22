@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="آزمون‌های روان‌سنجی و آماری IQLSI - ارزیابی هوش، شخصیت و توانایی‌های شناختی">
+    <meta name="keywords" content="psychometric tests, IQ tests, personality assessment, cognitive abilities, IQLSI">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://image-worker.cranko.cloud/placeholder/32/32?text=IQ&color=000066">
+    
+    <title>آزمون‌ها | Tests - IQLSI</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#000066',
+                        secondary: '#0000AA',
+                        accent: '#4169E1'
+                    },
+                    fontFamily: {
+                        'vazir': ['Vazirmatn', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    
+    <style>
+        [dir="rtl"] body { font-family: 'Vazirmatn', sans-serif; }
+        [dir="ltr"] body { font-family: 'Inter', sans-serif; }
+        
+        .gradient-primary {
+            background: linear-gradient(135deg, #000066 0%, #4169E1 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,102,0.15);
+        }
+        
+        /* Smooth scroll */
+        html { scroll-behavior: smooth; }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #000066; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: #0000AA; }
+        
+        .test-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .test-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .test-card:hover::before {
+            left: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Language Switcher & Top Bar -->
+    <div class="bg-primary text-white py-2 hidden md:block">
+        <div class="container mx-auto px-4 flex justify-between items-center text-sm">
+            <div class="flex items-center gap-4">
+                <span><i class="fas fa-phone"></i> <span class="lang-fa">۰۲۱-۸۸۶۷۸۸۷۷</span><span class="lang-en hidden">+98-21-88678877</span></span>
+                <span><i class="fas fa-envelope"></i> info@iqlsi.com</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <button onclick="switchLanguage()" class="flex items-center gap-2 hover:text-accent transition">
+                    <i class="fas fa-globe"></i>
+                    <span class="lang-fa">English</span>
+                    <span class="lang-en hidden">فارسی</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <nav class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center gap-3">
+                    <img src="https://image-worker.cranko.cloud/placeholder/60/60?text=IQLSI&color=000066" alt="Logo" class="w-12 h-12 rounded-full">
+                    <div>
+                        <h1 class="text-primary font-bold text-lg lang-fa">موسسه IQLSI</h1>
+                        <h1 class="text-primary font-bold text-lg lang-en hidden">IQLSI Institute</h1>
+                        <p class="text-xs text-gray-500 lang-fa">سواد کمی و هوش آماری</p>
+                        <p class="text-xs text-gray-500 lang-en hidden">Quantitative Literacy & Statistical Intelligence</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <ul class="hidden lg:flex items-center gap-6">
+                    <li><a href="index.html" class="hover:text-primary transition lang-fa">خانه</a><a href="index.html" class="hover:text-primary transition lang-en hidden">Home</a></li>
+                    <li><a href="about.html" class="hover:text-primary transition lang-fa">درباره ما</a><a href="about.html" class="hover:text-primary transition lang-en hidden">About</a></li>
+                    <li><a href="services.html" class="hover:text-primary transition lang-fa">خدمات</a><a href="services.html" class="hover:text-primary transition lang-en hidden">Services</a></li>
+                    <li><a href="tests.html" class="text-primary font-semibold lang-fa">آزمون‌ها</a><a href="tests.html" class="text-primary font-semibold lang-en hidden">Tests</a></li>
+                    <li><a href="team.html" class="hover:text-primary transition lang-fa">تیم ما</a><a href="team.html" class="hover:text-primary transition lang-en hidden">Our Team</a></li>
+                    <li><a href="contact.html" class="hover:text-primary transition lang-fa">تماس</a><a href="contact.html" class="hover:text-primary transition lang-en hidden">Contact</a></li>
+                    <li>
+                        <a href="courses.html" class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary transition">
+                            <span class="lang-fa">ثبت‌نام آموزش</span>
+                            <span class="lang-en hidden">Register Course</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Mobile Menu Toggle -->
+                <button id="mobileMenuToggle" class="lg:hidden text-primary text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden lg:hidden pb-4">
+                <ul class="flex flex-col gap-3">
+                    <li><a href="index.html" class="block py-2 hover:text-primary transition">خانه</a></li>
+                    <li><a href="about.html" class="block py-2 hover:text-primary transition">درباره ما</a></li>
+                    <li><a href="services.html" class="block py-2 hover:text-primary transition">خدمات</a></li>
+                    <li><a href="tests.html" class="block py-2 text-primary font-semibold">آزمون‌ها</a></li>
+                    <li><a href="team.html" class="block py-2 hover:text-primary transition">تیم ما</a></li>
+                    <li><a href="contact.html" class="block py-2 hover:text-primary transition">تماس</a></li>
+                    <li><a href="courses.html" class="block py-2 hover:text-primary transition">ثبت‌نام آموزش</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gradient-primary text-white py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center" data-aos="fade-up">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 lang-fa">آزمون‌های تخصصی IQLSI</h1>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 lang-en hidden">IQLSI Specialized Tests</h1>
+                <p class="text-xl lang-fa">ارزیابی دقیق و علمی توانایی‌های شناختی و روان‌شناختی</p>
+                <p class="text-xl lang-en hidden">Accurate and scientific assessment of cognitive and psychological abilities</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <section class="bg-gray-100 py-4">
+        <div class="container mx-auto px-4">
+            <nav class="flex items-center gap-2 text-sm">
+                <a href="index.html" class="text-gray-600 hover:text-primary transition">
+                    <span class="lang-fa">خانه</span>
+                    <span class="lang-en hidden">Home</span>
+                </a>
+                <span class="text-gray-400">/</span>
+                <span class="text-primary font-semibold">
+                    <span class="lang-fa">آزمون‌ها</span>
+                    <span class="lang-en hidden">Tests</span>
+                </span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Test Categories -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 lang-fa">دسته‌بندی آزمون‌ها</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 lang-en hidden">Test Categories</h2>
+                <div class="w-24 h-1 bg-accent mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-6 mb-12">
+                <div class="text-center cursor-pointer" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-primary text-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 hover:bg-secondary transition">
+                        <i class="fas fa-brain text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold lang-fa">آزمون‌های هوش</h4>
+                    <h4 class="font-bold lang-en hidden">Intelligence Tests</h4>
+                </div>
+
+                <div class="text-center cursor-pointer" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-primary text-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 hover:bg-secondary transition">
+                        <i class="fas fa-user text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold lang-fa">آزمون‌های شخصیت</h4>
+                    <h4 class="font-bold lang-en hidden">Personality Tests</h4>
+                </div>
+
+                <div class="text-center cursor-pointer" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-primary text-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 hover:bg-secondary transition">
+                        <i class="fas fa-child text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold lang-fa">آزمون‌های کودکان</h4>
+                    <h4 class="font-bold lang-en hidden">Children's Tests</h4>
+                </div>
+
+                <div class="text-center cursor-pointer" data-aos="fade-up" data-aos-delay="400">
+                    <div class="bg-primary text-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 hover:bg-secondary transition">
+                        <i class="fas fa-briefcase text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold lang-fa">آزمون‌های شغلی</h4>
+                    <h4 class="font-bold lang-en hidden">Occupational Tests</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Tests -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 lang-fa">آزمون‌های برجسته</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 lang-en hidden">Featured Tests</h2>
+                <div class="w-24 h-1 bg-accent mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Test 1 -->
+                <div class="test-card bg-white rounded-lg shadow-lg overflow-hidden card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://image-worker.cranko.cloud/placeholder/400/250?text=Stanford-Binet&color=000066" alt="Stanford-Binet Test" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-accent text-white px-3 py-1 rounded-full text-sm">هوش</span>
+                            <span class="text-gray-500 text-sm">120 دقیقه</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-2 lang-fa">آزمون هوش استنفورد-بینه</h3>
+                        <h3 class="text-xl font-bold text-primary mb-2 lang-en hidden">Stanford-Binet Intelligence Test</h3>
+                        <p class="text-gray-600 mb-4 lang-fa">
+                            جامع‌ترین آزمون سنجش هوش برای افراد ۲ تا ۹۰ سال، شامل ارزیابی حافظه، استدلال، دانش و پردازش دیداری-فضایی
+                        </p>
+                        <p class="text-gray-600 mb-4 lang-en hidden">
+                            Comprehensive intelligence test for ages 2-90, including assessment of memory, reasoning, knowledge, and visual-spatial processing
+                        </p>
+                        <ul class="text-sm text-gray-500 space-y-1 mb-4">
+                            <li><i class="fas fa-check text-accent ml-2"></i>گزارش تفصیلی IQ</li>
+                            <li><i class="fas fa-check text-accent ml-2"></i>نیمرخ توانایی‌های شناختی</li>
+                            <li><i class="fas fa-check text-accent ml-2"></i>توصیه‌های آموزشی</li>
+                        </ul>
+                        <button class="w-full bg-primary text-white py-2 rounded-lg hover:bg-secondary transition">
+                            <span class="lang-fa">رزرو آزمون</span>
+                            <span class="lang-en hidden">Book Test</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Test 2 -->
+                <div class="test-card bg-white rounded-lg shadow-lg overflow-hidden card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://image-worker.cranko.cloud/placeholder/400/250?text=WISC-V&color=4169E1" alt="WISC-V Test" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-accent text-white px-3 py-1 rounded-full text-sm">کودکان</span>
+                            <span class="text-gray-500 text-sm">90 دقیقه</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-2 lang-fa">آزمون هوش وکسلر کودکان</h3>
+                        <h3 class="text-xl font-bold text-primary mb-2 lang-en hidden">Wechsler Intelligence Scale for Children</h3>
+                        <p class="text-gray-600 mb-4 lang-fa">
+                            آزمون استاندارد سنجش هوش کودکان ۶ تا ۱۶ سال، ارزیابی درک کلامی، استدلال ادراکی، حافظه فعال و سرعت پردازش
+                        </p>
+                        <p class="text-gray-600 mb-4 lang-en hidden">
+                            Standard intelligence test for children 6-16 years, assessing verbal comprehension, perceptual reasoning, working memory, and processing speed
+                        </p>
+                        <ul class="text-sm text-gray-500 space-y-1 mb-4">
+                            <li><i class="fas fa-check text-accent ml-2"></i>تحلیل نقاط قوت و ضعف</li>
+                            <li><i class="fas fa-check text-accent ml-2"></i>برنامه مداخله آموزشی</li>
+                            <li><i class="fas fa-check text-accent ml-2"></i>مشاوره والدین</li>
+                        </ul>
+                        <button class="w-full bg-primary text-white py-2 rounded-lg hover:bg-secondary transition">
+                            <span class="lang-fa">رزرو آزمون</span>
+                            <span class="lang-en hidden">Book Test</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Test 3 -->
+                <div class="test-card bg-white rounded-lg shadow-lg overflow-hidden card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://image-worker.cranko.cloud/placeholder/400/250?text=MMPI-2&color=000066" alt="MMPI-2 Test" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-accent text-white px-3 py-1 rounded-full text-sm">شخصیت</span>
+                            <span class="text-gray-500 text-sm">60 دقیقه</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-2 lang-fa">آزمون شخصیت MMPI-2</h3>
+                        <h3 class="text-xl font-bold text-primary mb-2 lang-en hidden">MMPI-2 Personality Test</h3>
+                        <p class="text-gray-600 mb-4 lang-fa">
+                            جامع‌ترین آزمون ارزیابی شخصیت و آسیب‌شناسی روانی، مناسب برای تشخیص اختلالات روانی و ارزیابی سلامت روان
+                        </p>
+                        <p class="text-gray-600 mb-4 lang-en hidden">
+                            Comprehensive personality and psychopathology assessment test, suitable for diagnosing mental disorders and evaluating mental health
+                        </p>
+                        <ul class="text-sm text-gray-500 space-y-1 mb-4">
+                            <li><i class="fas fa-check text-accent ml-2"></i>پروفایل شخصیتی کامل</li>
+                            <li><i class="fas fa-check text-accent ml-2"></i>شناسایی الگوهای رفتاری</li>
+                            <li><i class="fas fa-check text-accent ml-2"></i>توصیه‌های درمانی</li>
+                        </ul>
+                        <button class="w-full bg-primary text-white py-2 rounded-lg hover:bg-secondary transition">
+                            <span class="lang-fa">رزرو آزمون</span>
+                            <span class="lang-en hidden">Book Test</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Test 4 -->
+                <div class="test-card bg-white rounded-lg shadow-lg overflow-hidden card-hover" data-aos="fade-up" data-aos-delay="400">
+                    <img src="https://image-worker.cranko.cloud/placeholder/400/250?text=Career+Assessment&color=4169E1" alt="Career Test" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-accent text-white px-3 py-1 rounded-full text-sm">شغلی</span>
+                            <span class="text-gray-500 text-sm">45 دقیقه</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-2 lang-fa">آزمون استعدادیابی شغلی</h3>
+                        <h3 class="text-xl font-bold text-primary mb-2 lang-en hidden">Career Aptitude Test</h3>
+                        <p class="text-gray-600 mb-4 lang-fa">
+                            شناسایی استعدادها، علایق و توانایی‌های شغلی برای انتخاب مسیر شغلی مناسب و برنامه‌ریزی حرفه‌ای
+                        </p>
+                        <p class="text-gray-600 mb-4 lang-en hidden">
+                            Identifying talents, interests, and occupational abilities for choosing the right career path and professional planning
+                        </p>
+                        <ul class="text-sm text-gray-500 space-y-1 mb-4">
+                            <li><i class="fas fa-check text-accent ml-2"></i>تحلیل استعدادها</li>
+                            <li><i class="fas fa-check text-accent ml-2"></i>پیشنهاد مشاغل مناسب</li>
+                            <li><i class="fas fa-check text-accent ml-2"></i>برنامه توسعه فردی</li>
+                        </ul>
+                        <button class="w-full bg-primary text-white py-2 rounded-lg hover:bg-secondary transition">
+                            <span class="lang-fa">رزرو آزمون</span>
+                            <span class="lang-en hidden">Book Test</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Test 5 -->
+                <div class="test-card bg-white rounded-lg shadow-lg overflow-hidden card-hover" data-aos="fade-up" data-aos-delay="500">
+                    <img src="https://image-worker.cranko.cloud/placeholder/400/250?text=Cognitive+Assessment&color=000066" alt="Cognitive Test" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-accent text-white px-3 py-1 rounded-full text-sm">شناختی</span>
+                            <span class="text-gray-500 text-sm">75 دقیقه</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-2 lang-fa">آزمون توانایی‌های شناختی</h3>
+                        <h3 class="text-xl font-bold text-primary mb-2 lang-en hidden">Cognitive Abilities Test</h3>
+                        <p class="text-gray-600 mb-4 lang-fa">
+                            ارزیابی جامع توانایی‌های شناختی شامل توجه، حافظه، سرعت پردازش و کارکردهای اجرایی مغز
+                        </p>
+                        <p class="text-gray-600 mb-4 lang-en hidden">
+                            Comprehensive assessment of cognitive abilities including attention, memory, processing speed, and executive brain functions
+                        </p>
+                        <ul class="text-sm text-gray-500 space-y-1 mb-4">
+                            <li><i class="fas fa-check text-accent ml-2"></i>نیمرخ شناختی کامل</li>
+                            <li><i class="fas fa-check text-accent ml-2"></i>تمرین‌های تقویتی</li>
+                            <li><i class="fas fa-check text-accent ml-2"></i>پیگیری پیشرفت</li>
+                        </ul>
+                        <button class="w-full bg-primary text-white py-2 rounded-lg hover:bg-secondary transition">
+                            <span class="lang-fa">رزرو آزمون</span>
+                            <span class="lang-en hidden">Book Test</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Test 6 -->
+                <div class="test-card bg-white rounded-lg shadow-lg overflow-hidden card-hover" data-aos="fade-up" data-aos-delay="600">
+                    <img src="https://image-worker.cranko.cloud/placeholder/400/250?text=School+Readiness&color=4169E1" alt="School Readiness" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-accent text-white px-3 py-1 rounded-full text-sm">آمادگی</span>
+                            <span class="text-gray-500 text-sm">30 دقیقه</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-2 lang-fa">آزمون آمادگی تحصیلی</h3>
+                        <h3 class="text-xl font-bold text-primary mb-2 lang-en hidden">School Readiness Test</h3>
+                        <p class="text-gray-600 mb-4 lang-fa">
+                            سنجش آمادگی کودکان برای ورود به مدرسه، ارزیابی مهارت‌های پایه تحصیلی و رشد اجتماعی-عاطفی
+                        </p>
+                        <p class="text-gray-600 mb-4 lang-en hidden">
+                            Assessing children's readiness for school, evaluating basic academic skills and social-emotional development
+                        </p>
+                        <ul class="text-sm text-gray-500 space-y-1 mb-4">
+                            <li><i class="fas fa-check text-accent ml-2"></i>ارزیابی مهارت‌های پایه</li>
+                            <li><i class="fas fa-check text-accent ml-2"></i>شناسایی نیازهای آموزشی</li>
+                            <li><i class="fas fa-check text-accent ml-2"></i>راهنمای والدین</li>
+                        </ul>
+                        <button class="w-full bg-primary text-white py-2 rounded-lg hover:bg-secondary transition">
+                            <span class="lang-fa">رزرو آزمون</span>
+                            <span class="lang-en hidden">Book Test</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Test Process -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 lang-fa">مراحل انجام آزمون</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 lang-en hidden">Test Process</h2>
+                <div class="w-24 h-1 bg-accent mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-5 gap-4">
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-accent text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">1</div>
+                    <h4 class="font-bold mb-2 lang-fa">ثبت‌نام</h4>
+                    <h4 class="font-bold mb-2 lang-en hidden">Registration</h4>
+                    <p class="text-sm text-gray-600 lang-fa">انتخاب آزمون و رزرو وقت</p>
+                    <p class="text-sm text-gray-600 lang-en hidden">Test selection and appointment booking</p>
+                </div>
+
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-accent text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">2</div>
+                    <h4 class="font-bold mb-2 lang-fa">مصاحبه اولیه</h4>
+                    <h4 class="font-bold mb-2 lang-en hidden">Initial Interview</h4>
+                    <p class="text-sm text-gray-600 lang-fa">جمع‌آوری اطلاعات پایه</p>
+                    <p class="text-sm text-gray-600 lang-en hidden">Gathering basic information</p>
+                </div>
+
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-accent text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">3</div>
+                    <h4 class="font-bold mb-2 lang-fa">اجرای آزمون</h4>
+                    <h4 class="font-bold mb-2 lang-en hidden">Test Administration</h4>
+                    <p class="text-sm text-gray-600 lang-fa">انجام آزمون توسط متخصص</p>
+                    <p class="text-sm text-gray-600 lang-en hidden">Test conducted by specialist</p>
+                </div>
+
+                <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="bg-accent text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">4</div>
+                    <h4 class="font-bold mb-2 lang-fa">تحلیل نتایج</h4>
+                    <h4 class="font-bold mb-2 lang-en hidden">Results Analysis</h4>
+                    <p class="text-sm text-gray-600 lang-fa">بررسی و تفسیر داده‌ها</p>
+                    <p class="text-sm text-gray-600 lang-en hidden">Data review and interpretation</p>
+                </div>
+
+                <div class="text-center" data-aos="fade-up" data-aos-delay="500">
+                    <div class="bg-accent text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">5</div>
+                    <h4 class="font-bold mb-2 lang-fa">ارائه گزارش</h4>
+                    <h4 class="font-bold mb-2 lang-en hidden">Report Delivery</h4>
+                    <p class="text-sm text-gray-600 lang-fa">تحویل گزارش و مشاوره</p>
+                    <p class="text-sm text-gray-600 lang-en hidden">Report delivery and consultation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="gradient-primary text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 lang-fa">نیاز به مشاوره دارید؟</h2>
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 lang-en hidden">Need Consultation?</h2>
+            <p class="text-xl mb-8 lang-fa">متخصصان ما آماده پاسخگویی به سوالات شما هستند</p>
+            <p class="text-xl mb-8 lang-en hidden">Our specialists are ready to answer your questions</p>
+            <div class="flex gap-4 justify-center">
+                <a href="contact.html" class="bg-white text-primary px-8 py-3 rounded-lg hover:bg-gray-100 transition">
+                    <i class="fas fa-phone ml-2"></i>
+                    <span class="lang-fa">تماس با ما</span>
+                    <span class="lang-en hidden">Contact Us</span>
+                </a>
+                <button class="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-primary transition">
+                    <i class="fas fa-calendar ml-2"></i>
+                    <span class="lang-fa">رزرو آنلاین</span>
+                    <span class="lang-en hidden">Online Booking</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- About -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 lang-fa">درباره IQLSI</h3>
+                    <h3 class="text-xl font-bold mb-4 lang-en hidden">About IQLSI</h3>
+                    <p class="text-gray-300 lang-fa">موسسه سواد کمی و هوش آماری، پیشرو در آموزش و ارزیابی</p>
+                    <p class="text-gray-300 lang-en hidden">Institute of Quantitative Literacy and Statistical Intelligence</p>
+                    <div class="flex gap-4 mt-4">
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-linkedin text-xl"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 lang-fa">لینک‌های سریع</h3>
+                    <h3 class="text-xl font-bold mb-4 lang-en hidden">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-white transition">خانه</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-white transition">درباره ما</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-white transition">خدمات</a></li>
+                        <li><a href="tests.html" class="text-gray-300 hover:text-white transition">آزمون‌ها</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 lang-fa">تماس با ما</h3>
+                    <h3 class="text-xl font-bold mb-4 lang-en hidden">Contact Us</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><i class="fas fa-map-marker-alt ml-2"></i> تهران، خیابان آزادی</li>
+                        <li><i class="fas fa-phone ml-2"></i> ۰۲۱-۸۸۶۷۸۸۷۷</li>
+                        <li><i class="fas fa-envelope ml-2"></i> info@iqlsi.com</li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 lang-fa">خبرنامه</h3>
+                    <h3 class="text-xl font-bold mb-4 lang-en hidden">Newsletter</h3>
+                    <p class="text-gray-300 mb-4 lang-fa">برای دریافت آخرین اخبار ثبت نام کنید</p>
+                    <p class="text-gray-300 mb-4 lang-en hidden">Subscribe for latest news</p>
+                    <form class="flex">
+                        <input type="email" placeholder="ایمیل شما" class="px-4 py-2 rounded-r-lg text-gray-800 flex-1">
+                        <button type="submit" class="bg-accent hover:bg-opacity-90 px-4 py-2 rounded-l-lg transition">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-300 lang-fa">© ۱۴۰۳ موسسه IQLSI. تمامی حقوق محفوظ است.</p>
+                <p class="text-gray-300 lang-en hidden">© 2024 IQLSI Institute. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-6 left-6 bg-primary text-white w-12 h-12 rounded-full shadow-lg hover:bg-secondary transition opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Language Switcher
+        let currentLang = 'fa';
+        
+        function switchLanguage() {
+            currentLang = currentLang === 'fa' ? 'en' : 'fa';
+            document.documentElement.lang = currentLang;
+            document.documentElement.dir = currentLang === 'fa' ? 'rtl' : 'ltr';
+            
+            // Toggle language elements
+            document.querySelectorAll('.lang-fa').forEach(el => {
+                el.classList.toggle('hidden', currentLang !== 'fa');
+            });
+            document.querySelectorAll('.lang-en').forEach(el => {
+                el.classList.toggle('hidden', currentLang !== 'en');
+            });
+            
+            // Update body font
+            if (currentLang === 'en') {
+                document.body.style.fontFamily = "'Inter', sans-serif";
+            } else {
+                document.body.style.fontFamily = "'Vazirmatn', sans-serif";
+            }
+        }
+
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.remove('opacity-0', 'invisible');
+                backToTop.classList.add('opacity-100', 'visible');
+            } else {
+                backToTop.classList.add('opacity-0', 'invisible');
+                backToTop.classList.remove('opacity-100', 'visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Form Submission (Demo)
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert(currentLang === 'fa' ? 'فرم با موفقیت ارسال شد!' : 'Form submitted successfully!');
+            });
+        });
+    </script>
+</body>
+</html>

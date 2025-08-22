@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="خدمات موسسه IQLSI - آموزش، مشاوره و تحلیل داده">
+    <meta name="keywords" content="data analysis, statistics training, business intelligence, IQLSI services">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://image-worker.cranko.cloud/placeholder/32/32?text=IQ&color=000066">
+    
+    <title>خدمات | Services - IQLSI</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#000066',
+                        secondary: '#0000AA',
+                        accent: '#4169E1'
+                    },
+                    fontFamily: {
+                        'vazir': ['Vazirmatn', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    
+    <style>
+        [dir="rtl"] body { font-family: 'Vazirmatn', sans-serif; }
+        [dir="ltr"] body { font-family: 'Inter', sans-serif; }
+        
+        .gradient-primary {
+            background: linear-gradient(135deg, #000066 0%, #4169E1 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,102,0.15);
+        }
+        
+        /* Smooth scroll */
+        html { scroll-behavior: smooth; }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #000066; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: #0000AA; }
+        
+        .service-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Language Switcher & Top Bar -->
+    <div class="bg-primary text-white py-2 hidden md:block">
+        <div class="container mx-auto px-4 flex justify-between items-center text-sm">
+            <div class="flex items-center gap-4">
+                <span><i class="fas fa-phone"></i> <span class="lang-fa">۰۲۱-۸۸۶۷۸۸۷۷</span><span class="lang-en hidden">+98-21-88678877</span></span>
+                <span><i class="fas fa-envelope"></i> info@iqlsi.com</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <button onclick="switchLanguage()" class="flex items-center gap-2 hover:text-accent transition">
+                    <i class="fas fa-globe"></i>
+                    <span class="lang-fa">English</span>
+                    <span class="lang-en hidden">فارسی</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <nav class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center gap-3">
+                    <img src="https://image-worker.cranko.cloud/placeholder/60/60?text=IQLSI&color=000066" alt="Logo" class="w-12 h-12 rounded-full">
+                    <div>
+                        <h1 class="text-primary font-bold text-lg lang-fa">موسسه IQLSI</h1>
+                        <h1 class="text-primary font-bold text-lg lang-en hidden">IQLSI Institute</h1>
+                        <p class="text-xs text-gray-500 lang-fa">سواد کمی و هوش آماری</p>
+                        <p class="text-xs text-gray-500 lang-en hidden">Quantitative Literacy & Statistical Intelligence</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <ul class="hidden lg:flex items-center gap-6">
+                    <li><a href="index.html" class="hover:text-primary transition lang-fa">خانه</a><a href="index.html" class="hover:text-primary transition lang-en hidden">Home</a></li>
+                    <li><a href="about.html" class="hover:text-primary transition lang-fa">درباره ما</a><a href="about.html" class="hover:text-primary transition lang-en hidden">About</a></li>
+                    <li><a href="services.html" class="text-primary font-semibold lang-fa">خدمات</a><a href="services.html" class="text-primary font-semibold lang-en hidden">Services</a></li>
+                    <li><a href="tests.html" class="hover:text-primary transition lang-fa">آزمون‌ها</a><a href="tests.html" class="hover:text-primary transition lang-en hidden">Tests</a></li>
+                    <li><a href="team.html" class="hover:text-primary transition lang-fa">تیم ما</a><a href="team.html" class="hover:text-primary transition lang-en hidden">Our Team</a></li>
+                    <li><a href="contact.html" class="hover:text-primary transition lang-fa">تماس</a><a href="contact.html" class="hover:text-primary transition lang-en hidden">Contact</a></li>
+                    <li>
+                        <a href="courses.html" class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary transition">
+                            <span class="lang-fa">ثبت‌نام آموزش</span>
+                            <span class="lang-en hidden">Register Course</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Mobile Menu Toggle -->
+                <button id="mobileMenuToggle" class="lg:hidden text-primary text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden lg:hidden pb-4">
+                <ul class="flex flex-col gap-3">
+                    <li><a href="index.html" class="block py-2 hover:text-primary transition">خانه</a></li>
+                    <li><a href="about.html" class="block py-2 hover:text-primary transition">درباره ما</a></li>
+                    <li><a href="services.html" class="block py-2 text-primary font-semibold">خدمات</a></li>
+                    <li><a href="tests.html" class="block py-2 hover:text-primary transition">آزمون‌ها</a></li>
+                    <li><a href="team.html" class="block py-2 hover:text-primary transition">تیم ما</a></li>
+                    <li><a href="contact.html" class="block py-2 hover:text-primary transition">تماس</a></li>
+                    <li><a href="courses.html" class="block py-2 hover:text-primary transition">ثبت‌نام آموزش</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gradient-primary text-white py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center" data-aos="fade-up">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 lang-fa">خدمات موسسه IQLSI</h1>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 lang-en hidden">IQLSI Services</h1>
+                <p class="text-xl lang-fa">راه‌حل‌های جامع برای نیازهای آماری و تحلیل داده شما</p>
+                <p class="text-xl lang-en hidden">Comprehensive solutions for your statistical and data analysis needs</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <section class="bg-gray-100 py-4">
+        <div class="container mx-auto px-4">
+            <nav class="flex items-center gap-2 text-sm">
+                <a href="index.html" class="text-gray-600 hover:text-primary transition">
+                    <span class="lang-fa">خانه</span>
+                    <span class="lang-en hidden">Home</span>
+                </a>
+                <span class="text-gray-400">/</span>
+                <span class="text-primary font-semibold">
+                    <span class="lang-fa">خدمات</span>
+                    <span class="lang-en hidden">Services</span>
+                </span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Main Services -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 lang-fa">خدمات اصلی ما</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 lang-en hidden">Our Main Services</h2>
+                <div class="w-24 h-1 bg-accent mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white rounded-lg shadow-lg p-8 card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon text-primary text-5xl mb-4">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-4 lang-fa">آموزش تخصصی</h3>
+                    <h3 class="text-xl font-bold text-primary mb-4 lang-en hidden">Professional Training</h3>
+                    <p class="text-gray-600 mb-4 lang-fa">
+                        دوره‌های آموزشی جامع در زمینه آمار، تحلیل داده، یادگیری ماشین و هوش تجاری با رویکرد عملی و کاربردی
+                    </p>
+                    <p class="text-gray-600 mb-4 lang-en hidden">
+                        Comprehensive training courses in statistics, data analysis, machine learning, and business intelligence with practical approach
+                    </p>
+                    <ul class="text-sm text-gray-500 space-y-2 mb-4">
+                        <li class="lang-fa"><i class="fas fa-check text-accent ml-2"></i>دوره‌های حضوری و آنلاین</li>
+                        <li class="lang-en hidden"><i class="fas fa-check text-accent ml-2"></i>In-person and online courses</li>
+                        <li class="lang-fa"><i class="fas fa-check text-accent ml-2"></i>گواهینامه معتبر</li>
+                        <li class="lang-en hidden"><i class="fas fa-check text-accent ml-2"></i>Valid certification</li>
+                        <li class="lang-fa"><i class="fas fa-check text-accent ml-2"></i>پشتیبانی پس از دوره</li>
+                        <li class="lang-en hidden"><i class="fas fa-check text-accent ml-2"></i>Post-course support</li>
+                    </ul>
+                    <a href="courses.html" class="inline-block bg-primary text-white px-6 py-2 rounded-lg hover:bg-secondary transition">
+                        <span class="lang-fa">مشاهده دوره‌ها</span>
+                        <span class="lang-en hidden">View Courses</span>
+                    </a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card bg-white rounded-lg shadow-lg p-8 card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon text-primary text-5xl mb-4">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-4 lang-fa">تحلیل داده و مشاوره</h3>
+                    <h3 class="text-xl font-bold text-primary mb-4 lang-en hidden">Data Analysis & Consulting</h3>
+                    <p class="text-gray-600 mb-4 lang-fa">
+                        ارائه خدمات مشاوره تخصصی در زمینه تحلیل داده، طراحی پژوهش و پیاده‌سازی راه‌حل‌های آماری
+                    </p>
+                    <p class="text-gray-600 mb-4 lang-en hidden">
+                        Specialized consulting services in data analysis, research design, and implementation of statistical solutions
+                    </p>
+                    <ul class="text-sm text-gray-500 space-y-2 mb-4">
+                        <li class="lang-fa"><i class="fas fa-check text-accent ml-2"></i>تحلیل‌های پیشرفته</li>
+                        <li class="lang-en hidden"><i class="fas fa-check text-accent ml-2"></i>Advanced analytics</li>
+                        <li class="lang-fa"><i class="fas fa-check text-accent ml-2"></i>گزارش‌های تصویری</li>
+                        <li class="lang-en hidden"><i class="fas fa-check text-accent ml-2"></i>Visual reports</li>
+                        <li class="lang-fa"><i class="fas fa-check text-accent ml-2"></i>راه‌حل‌های سفارشی</li>
+                        <li class="lang-en hidden"><i class="fas fa-check text-accent ml-2"></i>Custom solutions</li>
+                    </ul>
+                    <a href="contact.html" class="inline-block bg-primary text-white px-6 py-2 rounded-lg hover:bg-secondary transition">
+                        <span class="lang-fa">درخواست مشاوره</span>
+                        <span class="lang-en hidden">Request Consultation</span>
+                    </a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card bg-white rounded-lg shadow-lg p-8 card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon text-primary text-5xl mb-4">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-4 lang-fa">آزمون‌های روان‌سنجی</h3>
+                    <h3 class="text-xl font-bold text-primary mb-4 lang-en hidden">Psychometric Tests</h3>
+                    <p class="text-gray-600 mb-4 lang-fa">
+                        طراحی و اجرای آزمون‌های استاندارد روان‌سنجی برای ارزیابی توانایی‌های شناختی و شخصیتی
+                    </p>
+                    <p class="text-gray-600 mb-4 lang-en hidden">
+                        Design and implementation of standard psychometric tests for cognitive and personality assessment
+                    </p>
+                    <ul class="text-sm text-gray-500 space-y-2 mb-4">
+                        <li class="lang-fa"><i class="fas fa-check text-accent ml-2"></i>آزمون‌های معتبر بین‌المللی</li>
+                        <li class="lang-en hidden"><i class="fas fa-check text-accent ml-2"></i>International validated tests</li>
+                        <li class="lang-fa"><i class="fas fa-check text-accent ml-2"></i>تفسیر تخصصی نتایج</li>
+                        <li class="lang-en hidden"><i class="fas fa-check text-accent ml-2"></i>Expert result interpretation</li>
+                        <li class="lang-fa"><i class="fas fa-check text-accent ml-2"></i>گزارش جامع</li>
+                        <li class="lang-en hidden"><i class="fas fa-check text-accent ml-2"></i>Comprehensive reports</li>
+                    </ul>
+                    <a href="tests.html" class="inline-block bg-primary text-white px-6 py-2 rounded-lg hover:bg-secondary transition">
+                        <span class="lang-fa">مشاهده آزمون‌ها</span>
+                        <span class="lang-en hidden">View Tests</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialized Services -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 lang-fa">خدمات تخصصی</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 lang-en hidden">Specialized Services</h2>
+                <div class="w-24 h-1 bg-accent mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Specialized Service 1 -->
+                <div class="bg-white rounded-lg p-6 text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-accent text-4xl mb-4">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2 lang-fa">پردازش داده‌های بزرگ</h4>
+                    <h4 class="font-bold text-lg mb-2 lang-en hidden">Big Data Processing</h4>
+                    <p class="text-gray-600 text-sm lang-fa">راه‌حل‌های پردازش و تحلیل حجم بالای داده</p>
+                    <p class="text-gray-600 text-sm lang-en hidden">Solutions for processing and analyzing large volumes of data</p>
+                </div>
+
+                <!-- Specialized Service 2 -->
+                <div class="bg-white rounded-lg p-6 text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-accent text-4xl mb-4">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2 lang-fa">یادگیری ماشین</h4>
+                    <h4 class="font-bold text-lg mb-2 lang-en hidden">Machine Learning</h4>
+                    <p class="text-gray-600 text-sm lang-fa">توسعه مدل‌های پیش‌بینی و طبقه‌بندی</p>
+                    <p class="text-gray-600 text-sm lang-en hidden">Development of prediction and classification models</p>
+                </div>
+
+                <!-- Specialized Service 3 -->
+                <div class="bg-white rounded-lg p-6 text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-accent text-4xl mb-4">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2 lang-fa">داشبورد مدیریتی</h4>
+                    <h4 class="font-bold text-lg mb-2 lang-en hidden">Management Dashboard</h4>
+                    <p class="text-gray-600 text-sm lang-fa">طراحی داشبوردهای تعاملی و هوشمند</p>
+                    <p class="text-gray-600 text-sm lang-en hidden">Design of interactive and intelligent dashboards</p>
+                </div>
+
+                <!-- Specialized Service 4 -->
+                <div class="bg-white rounded-lg p-6 text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-accent text-4xl mb-4">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2 lang-fa">تحقیقات علمی</h4>
+                    <h4 class="font-bold text-lg mb-2 lang-en hidden">Scientific Research</h4>
+                    <p class="text-gray-600 text-sm lang-fa">همکاری در پروژه‌های تحقیقاتی دانشگاهی</p>
+                    <p class="text-gray-600 text-sm lang-en hidden">Collaboration in academic research projects</p>
+                </div>
+
+                <!-- Specialized Service 5 -->
+                <div class="bg-white rounded-lg p-6 text-center" data-aos="fade-up" data-aos-delay="500">
+                    <div class="text-accent text-4xl mb-4">
+                        <i class="fas fa-users-cog"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2 lang-fa">مشاوره سازمانی</h4>
+                    <h4 class="font-bold text-lg mb-2 lang-en hidden">Organizational Consulting</h4>
+                    <p class="text-gray-600 text-sm lang-fa">بهینه‌سازی فرآیندها با تحلیل داده</p>
+                    <p class="text-gray-600 text-sm lang-en hidden">Process optimization through data analysis</p>
+                </div>
+
+                <!-- Specialized Service 6 -->
+                <div class="bg-white rounded-lg p-6 text-center" data-aos="fade-up" data-aos-delay="600">
+                    <div class="text-accent text-4xl mb-4">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2 lang-fa">توسعه نرم‌افزار</h4>
+                    <h4 class="font-bold text-lg mb-2 lang-en hidden">Software Development</h4>
+                    <p class="text-gray-600 text-sm lang-fa">نرم‌افزارهای تحلیل داده سفارشی</p>
+                    <p class="text-gray-600 text-sm lang-en hidden">Custom data analysis software</p>
+                </div>
+
+                <!-- Specialized Service 7 -->
+                <div class="bg-white rounded-lg p-6 text-center" data-aos="fade-up" data-aos-delay="700">
+                    <div class="text-accent text-4xl mb-4">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2 lang-fa">امنیت داده</h4>
+                    <h4 class="font-bold text-lg mb-2 lang-en hidden">Data Security</h4>
+                    <p class="text-gray-600 text-sm lang-fa">راه‌کارهای حفاظت و امنیت اطلاعات</p>
+                    <p class="text-gray-600 text-sm lang-en hidden">Data protection and security solutions</p>
+                </div>
+
+                <!-- Specialized Service 8 -->
+                <div class="bg-white rounded-lg p-6 text-center" data-aos="fade-up" data-aos-delay="800">
+                    <div class="text-accent text-4xl mb-4">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2 lang-fa">انتشارات علمی</h4>
+                    <h4 class="font-bold text-lg mb-2 lang-en hidden">Scientific Publications</h4>
+                    <p class="text-gray-600 text-sm lang-fa">کمک در نگارش مقالات علمی</p>
+                    <p class="text-gray-600 text-sm lang-en hidden">Assistance in scientific paper writing</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 lang-fa">فرآیند کار ما</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 lang-en hidden">Our Work Process</h2>
+                <div class="w-24 h-1 bg-accent mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">1</div>
+                    <h4 class="font-bold text-lg mb-2 lang-fa">بررسی نیاز</h4>
+                    <h4 class="font-bold text-lg mb-2 lang-en hidden">Needs Assessment</h4>
+                    <p class="text-gray-600 text-sm lang-fa">شناسایی دقیق نیازها و اهداف پروژه</p>
+                    <p class="text-gray-600 text-sm lang-en hidden">Precise identification of project needs and goals</p>
+                </div>
+
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">2</div>
+                    <h4 class="font-bold text-lg mb-2 lang-fa">طراحی راه‌حل</h4>
+                    <h4 class="font-bold text-lg mb-2 lang-en hidden">Solution Design</h4>
+                    <p class="text-gray-600 text-sm lang-fa">ارائه راه‌حل مناسب و برنامه اجرایی</p>
+                    <p class="text-gray-600 text-sm lang-en hidden">Providing suitable solution and implementation plan</p>
+                </div>
+
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">3</div>
+                    <h4 class="font-bold text-lg mb-2 lang-fa">اجرا و پیاده‌سازی</h4>
+                    <h4 class="font-bold text-lg mb-2 lang-en hidden">Implementation</h4>
+                    <p class="text-gray-600 text-sm lang-fa">اجرای دقیق و حرفه‌ای پروژه</p>
+                    <p class="text-gray-600 text-sm lang-en hidden">Precise and professional project execution</p>
+                </div>
+
+                <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">4</div>
+                    <h4 class="font-bold text-lg mb-2 lang-fa">پشتیبانی</h4>
+                    <h4 class="font-bold text-lg mb-2 lang-en hidden">Support</h4>
+                    <p class="text-gray-600 text-sm lang-fa">پشتیبانی مستمر و بهبود مداوم</p>
+                    <p class="text-gray-600 text-sm lang-en hidden">Continuous support and improvement</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 lang-fa">نظرات مشتریان</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 lang-en hidden">Client Testimonials</h2>
+                <div class="w-24 h-1 bg-accent mx-auto"></div>
+            </div>
+
+            <div class="swiper testimonialsSwiper" data-aos="fade-up">
+                <div class="swiper-wrapper pb-12">
+                    <!-- Testimonial 1 -->
+                    <div class="swiper-slide">
+                        <div class="bg-white rounded-lg shadow-lg p-8">
+                            <div class="flex items-center mb-4">
+                                <img src="https://image-worker.cranko.cloud/placeholder/60/60?text=Client1&color=000066" alt="Client" class="w-12 h-12 rounded-full ml-4">
+                                <div>
+                                    <h4 class="font-bold lang-fa">دکتر احمدی</h4>
+                                    <h4 class="font-bold lang-en hidden">Dr. Ahmadi</h4>
+                                    <p class="text-gray-500 text-sm lang-fa">مدیر تحقیق و توسعه</p>
+                                    <p class="text-gray-500 text-sm lang-en hidden">R&D Manager</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 italic lang-fa">"همکاری با IQLSI تحول بزرگی در فرآیندهای تحلیل داده شرکت ما ایجاد کرد."</p>
+                            <p class="text-gray-600 italic lang-en hidden">"Working with IQLSI created a major transformation in our company's data analysis processes."</p>
+                            <div class="flex text-yellow-400 mt-4">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="swiper-slide">
+                        <div class="bg-white rounded-lg shadow-lg p-8">
+                            <div class="flex items-center mb-4">
+                                <img src="https://image-worker.cranko.cloud/placeholder/60/60?text=Client2&color=4169E1" alt="Client" class="w-12 h-12 rounded-full ml-4">
+                                <div>
+                                    <h4 class="font-bold lang-fa">مهندس رضایی</h4>
+                                    <h4 class="font-bold lang-en hidden">Eng. Rezaei</h4>
+                                    <p class="text-gray-500 text-sm lang-fa">مدیر پروژه</p>
+                                    <p class="text-gray-500 text-sm lang-en hidden">Project Manager</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 italic lang-fa">"دوره‌های آموزشی IQLSI بسیار کاربردی و با کیفیت بالا هستند."</p>
+                            <p class="text-gray-600 italic lang-en hidden">"IQLSI training courses are very practical and high quality."</p>
+                            <div class="flex text-yellow-400 mt-4">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="swiper-slide">
+                        <div class="bg-white rounded-lg shadow-lg p-8">
+                            <div class="flex items-center mb-4">
+                                <img src="https://image-worker.cranko.cloud/placeholder/60/60?text=Client3&color=000066" alt="Client" class="w-12 h-12 rounded-full ml-4">
+                                <div>
+                                    <h4 class="font-bold lang-fa">دکتر محمدی</h4>
+                                    <h4 class="font-bold lang-en hidden">Dr. Mohammadi</h4>
+                                    <p class="text-gray-500 text-sm lang-fa">استاد دانشگاه</p>
+                                    <p class="text-gray-500 text-sm lang-en hidden">University Professor</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 italic lang-fa">"تیم IQLSI در انجام پروژه‌های تحقیقاتی ما نقش کلیدی داشتند."</p>
+                            <p class="text-gray-600 italic lang-en hidden">"IQLSI team played a key role in our research projects."</p>
+                            <div class="flex text-yellow-400 mt-4">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next text-primary"></div>
+                <div class="swiper-button-prev text-primary"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="gradient-primary text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 lang-fa">آماده همکاری هستید؟</h2>
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 lang-en hidden">Ready to Collaborate?</h2>
+            <p class="text-xl mb-8 lang-fa">همین امروز با ما تماس بگیرید و از مشاوره رایگان بهره‌مند شوید</p>
+            <p class="text-xl mb-8 lang-en hidden">Contact us today and benefit from free consultation</p>
+            <div class="flex gap-4 justify-center">
+                <a href="contact.html" class="bg-white text-primary px-8 py-3 rounded-lg hover:bg-gray-100 transition">
+                    <span class="lang-fa">تماس با ما</span>
+                    <span class="lang-en hidden">Contact Us</span>
+                </a>
+                <a href="courses.html" class="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-primary transition">
+                    <span class="lang-fa">مشاهده دوره‌ها</span>
+                    <span class="lang-en hidden">View Courses</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- About -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 lang-fa">درباره IQLSI</h3>
+                    <h3 class="text-xl font-bold mb-4 lang-en hidden">About IQLSI</h3>
+                    <p class="text-gray-300 lang-fa">موسسه سواد کمی و هوش آماری، پیشرو در آموزش تحلیل داده</p>
+                    <p class="text-gray-300 lang-en hidden">Institute of Quantitative Literacy and Statistical Intelligence</p>
+                    <div class="flex gap-4 mt-4">
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-linkedin text-xl"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 lang-fa">لینک‌های سریع</h3>
+                    <h3 class="text-xl font-bold mb-4 lang-en hidden">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-white transition">خانه</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-white transition">درباره ما</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-white transition">خدمات</a></li>
+                        <li><a href="courses.html" class="text-gray-300 hover:text-white transition">دوره‌ها</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 lang-fa">تماس با ما</h3>
+                    <h3 class="text-xl font-bold mb-4 lang-en hidden">Contact Us</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><i class="fas fa-map-marker-alt ml-2"></i> تهران، خیابان آزادی</li>
+                        <li><i class="fas fa-phone ml-2"></i> ۰۲۱-۸۸۶۷۸۸۷۷</li>
+                        <li><i class="fas fa-envelope ml-2"></i> info@iqlsi.com</li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 lang-fa">خبرنامه</h3>
+                    <h3 class="text-xl font-bold mb-4 lang-en hidden">Newsletter</h3>
+                    <p class="text-gray-300 mb-4 lang-fa">برای دریافت آخرین اخبار ثبت نام کنید</p>
+                    <p class="text-gray-300 mb-4 lang-en hidden">Subscribe for latest news</p>
+                    <form class="flex">
+                        <input type="email" placeholder="ایمیل شما" class="px-4 py-2 rounded-r-lg text-gray-800 flex-1">
+                        <button type="submit" class="bg-accent hover:bg-opacity-90 px-4 py-2 rounded-l-lg transition">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-300 lang-fa">© ۱۴۰۳ موسسه IQLSI. تمامی حقوق محفوظ است.</p>
+                <p class="text-gray-300 lang-en hidden">© 2024 IQLSI Institute. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-6 left-6 bg-primary text-white w-12 h-12 rounded-full shadow-lg hover:bg-secondary transition opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Initialize Swiper for Testimonials
+        const testimonialsSwiper = new Swiper('.testimonialsSwiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.testimonialsSwiper .swiper-button-next',
+                prevEl: '.testimonialsSwiper .swiper-button-prev',
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Language Switcher
+        let currentLang = 'fa';
+        
+        function switchLanguage() {
+            currentLang = currentLang === 'fa' ? 'en' : 'fa';
+            document.documentElement.lang = currentLang;
+            document.documentElement.dir = currentLang === 'fa' ? 'rtl' : 'ltr';
+            
+            // Toggle language elements
+            document.querySelectorAll('.lang-fa').forEach(el => {
+                el.classList.toggle('hidden', currentLang !== 'fa');
+            });
+            document.querySelectorAll('.lang-en').forEach(el => {
+                el.classList.toggle('hidden', currentLang !== 'en');
+            });
+            
+            // Update body font
+            if (currentLang === 'en') {
+                document.body.style.fontFamily = "'Inter', sans-serif";
+            } else {
+                document.body.style.fontFamily = "'Vazirmatn', sans-serif";
+            }
+        }
+
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.remove('opacity-0', 'invisible');
+                backToTop.classList.add('opacity-100', 'visible');
+            } else {
+                backToTop.classList.add('opacity-0', 'invisible');
+                backToTop.classList.remove('opacity-100', 'visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Form Submission (Demo)
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert(currentLang === 'fa' ? 'فرم با موفقیت ارسال شد!' : 'Form submitted successfully!');
+            });
+        });
+    </script>
+</body>
+</html>
