@@ -48,6 +48,28 @@
         [dir="rtl"] body { font-family: 'Vazirmatn', sans-serif; }
         [dir="ltr"] body { font-family: 'Inter', sans-serif; }
         
+        /* Fix mobile white space issue */
+        html, body {
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        /* Ensure containers don't overflow on mobile */
+        .container {
+            max-width: 100%;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
+        
         .gradient-primary {
             background: linear-gradient(135deg, #000066 0%, #4169E1 100%);
         }
@@ -265,7 +287,7 @@
                     <div class="p-6">
                         <div class="flex items-center justify-between mb-4">
                             <span class="bg-accent text-white px-3 py-1 rounded-full text-sm">هوش</span>
-                            <span class="text-gray-500 text-sm">120 دقیقه</span>
+                            <span class="text-gray-500 text-sm"><span class="lang-fa">120 دقیقه</span><span class="lang-en hidden">120 minutes</span></span>
                         </div>
                         <h3 class="text-xl font-bold text-primary mb-2 lang-fa">آزمون هوش استنفورد-بینه</h3>
                         <h3 class="text-xl font-bold text-primary mb-2 lang-en hidden">Stanford-Binet Intelligence Test</h3>
@@ -298,7 +320,7 @@
                     <div class="p-6">
                         <div class="flex items-center justify-between mb-4">
                             <span class="bg-accent text-white px-3 py-1 rounded-full text-sm">کودکان</span>
-                            <span class="text-gray-500 text-sm">90 دقیقه</span>
+                            <span class="text-gray-500 text-sm"><span class="lang-fa">90 دقیقه</span><span class="lang-en hidden">90 minutes</span></span>
                         </div>
                         <h3 class="text-xl font-bold text-primary mb-2 lang-fa">آزمون هوش وکسلر کودکان</h3>
                         <h3 class="text-xl font-bold text-primary mb-2 lang-en hidden">Wechsler Intelligence Scale for Children</h3>
@@ -331,7 +353,7 @@
                     <div class="p-6">
                         <div class="flex items-center justify-between mb-4">
                             <span class="bg-accent text-white px-3 py-1 rounded-full text-sm">شخصیت</span>
-                            <span class="text-gray-500 text-sm">60 دقیقه</span>
+                            <span class="text-gray-500 text-sm"><span class="lang-fa">60 دقیقه</span><span class="lang-en hidden">60 minutes</span></span>
                         </div>
                         <h3 class="text-xl font-bold text-primary mb-2 lang-fa">آزمون شخصیت MMPI-2</h3>
                         <h3 class="text-xl font-bold text-primary mb-2 lang-en hidden">MMPI-2 Personality Test</h3>
@@ -364,7 +386,7 @@
                     <div class="p-6">
                         <div class="flex items-center justify-between mb-4">
                             <span class="bg-accent text-white px-3 py-1 rounded-full text-sm">شغلی</span>
-                            <span class="text-gray-500 text-sm">45 دقیقه</span>
+                            <span class="text-gray-500 text-sm"><span class="lang-fa">45 دقیقه</span><span class="lang-en hidden">45 minutes</span></span>
                         </div>
                         <h3 class="text-xl font-bold text-primary mb-2 lang-fa">آزمون استعدادیابی شغلی</h3>
                         <h3 class="text-xl font-bold text-primary mb-2 lang-en hidden">Career Aptitude Test</h3>
@@ -397,7 +419,7 @@
                     <div class="p-6">
                         <div class="flex items-center justify-between mb-4">
                             <span class="bg-accent text-white px-3 py-1 rounded-full text-sm">شناختی</span>
-                            <span class="text-gray-500 text-sm">75 دقیقه</span>
+                            <span class="text-gray-500 text-sm"><span class="lang-fa">75 دقیقه</span><span class="lang-en hidden">75 minutes</span></span>
                         </div>
                         <h3 class="text-xl font-bold text-primary mb-2 lang-fa">آزمون توانایی‌های شناختی</h3>
                         <h3 class="text-xl font-bold text-primary mb-2 lang-en hidden">Cognitive Abilities Test</h3>
@@ -430,7 +452,7 @@
                     <div class="p-6">
                         <div class="flex items-center justify-between mb-4">
                             <span class="bg-accent text-white px-3 py-1 rounded-full text-sm">آمادگی</span>
-                            <span class="text-gray-500 text-sm">30 دقیقه</span>
+                            <span class="text-gray-500 text-sm"><span class="lang-fa">30 دقیقه</span><span class="lang-en hidden">30 minutes</span></span>
                         </div>
                         <h3 class="text-xl font-bold text-primary mb-2 lang-fa">آزمون آمادگی تحصیلی</h3>
                         <h3 class="text-xl font-bold text-primary mb-2 lang-en hidden">School Readiness Test</h3>

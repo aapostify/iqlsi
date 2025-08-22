@@ -48,6 +48,28 @@
         [dir="rtl"] body { font-family: 'Vazirmatn', sans-serif; }
         [dir="ltr"] body { font-family: 'Inter', sans-serif; }
         
+        /* Fix mobile white space issue */
+        html, body {
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        /* Ensure containers don't overflow on mobile */
+        .container {
+            max-width: 100%;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
+        
         .gradient-primary {
             background: linear-gradient(135deg, #000066 0%, #4169E1 100%);
         }
