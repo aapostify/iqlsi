@@ -150,13 +150,26 @@
             <!-- Mobile Menu -->
             <div id="mobileMenu" class="hidden lg:hidden pb-4">
                 <ul class="flex flex-col gap-3">
-                    <li><a href="index.html" class="block py-2 hover:text-primary transition">خانه</a></li>
-                    <li><a href="about.html" class="block py-2 hover:text-primary transition">درباره ما</a></li>
-                    <li><a href="services.html" class="block py-2 hover:text-primary transition">خدمات</a></li>
-                    <li><a href="tests.html" class="block py-2 text-primary font-semibold">آزمون‌ها</a></li>
-                    <li><a href="team.html" class="block py-2 hover:text-primary transition">تیم ما</a></li>
-                    <li><a href="contact.html" class="block py-2 hover:text-primary transition">تماس</a></li>
-                    <li><a href="courses.html" class="block py-2 hover:text-primary transition">ثبت‌نام آموزش</a></li>
+                    <li><a href="index.html" class="block py-2 hover:text-primary transition"><span class="lang-fa">خانه</span><span class="lang-en hidden">Home</span></a></li>
+                    <li><a href="about.html" class="block py-2 hover:text-primary transition"><span class="lang-fa">درباره ما</span><span class="lang-en hidden">About</span></a></li>
+                    <li><a href="services.html" class="block py-2 hover:text-primary transition"><span class="lang-fa">خدمات</span><span class="lang-en hidden">Services</span></a></li>
+                    <li><a href="tests.html" class="block py-2 text-primary font-semibold"><span class="lang-fa">آزمون‌ها</span><span class="lang-en hidden">Tests</span></a></li>
+                    <li><a href="team.html" class="block py-2 hover:text-primary transition"><span class="lang-fa">تیم ما</span><span class="lang-en hidden">Our Team</span></a></li>
+                    <li><a href="contact.html" class="block py-2 hover:text-primary transition"><span class="lang-fa">تماس</span><span class="lang-en hidden">Contact</span></a></li>
+                    <li>
+                        <a href="courses.html" class="inline-block bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary transition">
+                            <span class="lang-fa">ثبت‌نام آموزش</span>
+                            <span class="lang-en hidden">Register Course</span>
+                        </a>
+                    </li>
+                    <!-- Language Switcher for Mobile -->
+                    <li class="pt-3 border-t border-gray-200">
+                        <button onclick="switchLanguage()" class="flex items-center gap-2 text-primary hover:text-secondary transition">
+                            <i class="fas fa-globe"></i>
+                            <span class="lang-fa">English</span>
+                            <span class="lang-en hidden">فارسی</span>
+                        </button>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -262,15 +275,20 @@
                         <p class="text-gray-600 mb-4 lang-en hidden">
                             Comprehensive intelligence test for ages 2-90, including assessment of memory, reasoning, knowledge, and visual-spatial processing
                         </p>
-                        <ul class="text-sm text-gray-500 space-y-1 mb-4">
+                        <ul class="text-sm text-gray-500 space-y-1 mb-4 lang-fa">
                             <li><i class="fas fa-check text-accent ml-2"></i>گزارش تفصیلی IQ</li>
                             <li><i class="fas fa-check text-accent ml-2"></i>نیمرخ توانایی‌های شناختی</li>
                             <li><i class="fas fa-check text-accent ml-2"></i>توصیه‌های آموزشی</li>
                         </ul>
-                        <button class="w-full bg-primary text-white py-2 rounded-lg hover:bg-secondary transition">
+                        <ul class="text-sm text-gray-500 space-y-1 mb-4 lang-en hidden">
+                            <li><i class="fas fa-check text-accent ml-2"></i>Detailed IQ Report</li>
+                            <li><i class="fas fa-check text-accent ml-2"></i>Cognitive Abilities Profile</li>
+                            <li><i class="fas fa-check text-accent ml-2"></i>Educational Recommendations</li>
+                        </ul>
+                        <a href="contact.html" class="block w-full bg-primary text-white py-2 rounded-lg hover:bg-secondary transition text-center">
                             <span class="lang-fa">رزرو آزمون</span>
                             <span class="lang-en hidden">Book Test</span>
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -290,15 +308,20 @@
                         <p class="text-gray-600 mb-4 lang-en hidden">
                             Standard intelligence test for children 6-16 years, assessing verbal comprehension, perceptual reasoning, working memory, and processing speed
                         </p>
-                        <ul class="text-sm text-gray-500 space-y-1 mb-4">
+                        <ul class="text-sm text-gray-500 space-y-1 mb-4 lang-fa">
                             <li><i class="fas fa-check text-accent ml-2"></i>تحلیل نقاط قوت و ضعف</li>
                             <li><i class="fas fa-check text-accent ml-2"></i>برنامه مداخله آموزشی</li>
                             <li><i class="fas fa-check text-accent ml-2"></i>مشاوره والدین</li>
                         </ul>
-                        <button class="w-full bg-primary text-white py-2 rounded-lg hover:bg-secondary transition">
+                        <ul class="text-sm text-gray-500 space-y-1 mb-4 lang-en hidden">
+                            <li><i class="fas fa-check text-accent ml-2"></i>Strengths & Weaknesses Analysis</li>
+                            <li><i class="fas fa-check text-accent ml-2"></i>Educational Intervention Program</li>
+                            <li><i class="fas fa-check text-accent ml-2"></i>Parent Consultation</li>
+                        </ul>
+                        <a href="contact.html" class="block w-full bg-primary text-white py-2 rounded-lg hover:bg-secondary transition text-center">
                             <span class="lang-fa">رزرو آزمون</span>
                             <span class="lang-en hidden">Book Test</span>
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -318,15 +341,20 @@
                         <p class="text-gray-600 mb-4 lang-en hidden">
                             Comprehensive personality and psychopathology assessment test, suitable for diagnosing mental disorders and evaluating mental health
                         </p>
-                        <ul class="text-sm text-gray-500 space-y-1 mb-4">
+                        <ul class="text-sm text-gray-500 space-y-1 mb-4 lang-fa">
                             <li><i class="fas fa-check text-accent ml-2"></i>پروفایل شخصیتی کامل</li>
                             <li><i class="fas fa-check text-accent ml-2"></i>شناسایی الگوهای رفتاری</li>
                             <li><i class="fas fa-check text-accent ml-2"></i>توصیه‌های درمانی</li>
                         </ul>
-                        <button class="w-full bg-primary text-white py-2 rounded-lg hover:bg-secondary transition">
+                        <ul class="text-sm text-gray-500 space-y-1 mb-4 lang-en hidden">
+                            <li><i class="fas fa-check text-accent ml-2"></i>Complete Personality Profile</li>
+                            <li><i class="fas fa-check text-accent ml-2"></i>Behavioral Pattern Identification</li>
+                            <li><i class="fas fa-check text-accent ml-2"></i>Therapeutic Recommendations</li>
+                        </ul>
+                        <a href="contact.html" class="block w-full bg-primary text-white py-2 rounded-lg hover:bg-secondary transition text-center">
                             <span class="lang-fa">رزرو آزمون</span>
                             <span class="lang-en hidden">Book Test</span>
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -346,15 +374,20 @@
                         <p class="text-gray-600 mb-4 lang-en hidden">
                             Identifying talents, interests, and occupational abilities for choosing the right career path and professional planning
                         </p>
-                        <ul class="text-sm text-gray-500 space-y-1 mb-4">
+                        <ul class="text-sm text-gray-500 space-y-1 mb-4 lang-fa">
                             <li><i class="fas fa-check text-accent ml-2"></i>تحلیل استعدادها</li>
                             <li><i class="fas fa-check text-accent ml-2"></i>پیشنهاد مشاغل مناسب</li>
                             <li><i class="fas fa-check text-accent ml-2"></i>برنامه توسعه فردی</li>
                         </ul>
-                        <button class="w-full bg-primary text-white py-2 rounded-lg hover:bg-secondary transition">
+                        <ul class="text-sm text-gray-500 space-y-1 mb-4 lang-en hidden">
+                            <li><i class="fas fa-check text-accent ml-2"></i>Talent Analysis</li>
+                            <li><i class="fas fa-check text-accent ml-2"></i>Career Recommendations</li>
+                            <li><i class="fas fa-check text-accent ml-2"></i>Personal Development Plan</li>
+                        </ul>
+                        <a href="contact.html" class="block w-full bg-primary text-white py-2 rounded-lg hover:bg-secondary transition text-center">
                             <span class="lang-fa">رزرو آزمون</span>
                             <span class="lang-en hidden">Book Test</span>
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -374,15 +407,20 @@
                         <p class="text-gray-600 mb-4 lang-en hidden">
                             Comprehensive assessment of cognitive abilities including attention, memory, processing speed, and executive brain functions
                         </p>
-                        <ul class="text-sm text-gray-500 space-y-1 mb-4">
+                        <ul class="text-sm text-gray-500 space-y-1 mb-4 lang-fa">
                             <li><i class="fas fa-check text-accent ml-2"></i>نیمرخ شناختی کامل</li>
                             <li><i class="fas fa-check text-accent ml-2"></i>تمرین‌های تقویتی</li>
                             <li><i class="fas fa-check text-accent ml-2"></i>پیگیری پیشرفت</li>
                         </ul>
-                        <button class="w-full bg-primary text-white py-2 rounded-lg hover:bg-secondary transition">
+                        <ul class="text-sm text-gray-500 space-y-1 mb-4 lang-en hidden">
+                            <li><i class="fas fa-check text-accent ml-2"></i>Complete Cognitive Profile</li>
+                            <li><i class="fas fa-check text-accent ml-2"></i>Strengthening Exercises</li>
+                            <li><i class="fas fa-check text-accent ml-2"></i>Progress Tracking</li>
+                        </ul>
+                        <a href="contact.html" class="block w-full bg-primary text-white py-2 rounded-lg hover:bg-secondary transition text-center">
                             <span class="lang-fa">رزرو آزمون</span>
                             <span class="lang-en hidden">Book Test</span>
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -402,15 +440,20 @@
                         <p class="text-gray-600 mb-4 lang-en hidden">
                             Assessing children's readiness for school, evaluating basic academic skills and social-emotional development
                         </p>
-                        <ul class="text-sm text-gray-500 space-y-1 mb-4">
+                        <ul class="text-sm text-gray-500 space-y-1 mb-4 lang-fa">
                             <li><i class="fas fa-check text-accent ml-2"></i>ارزیابی مهارت‌های پایه</li>
                             <li><i class="fas fa-check text-accent ml-2"></i>شناسایی نیازهای آموزشی</li>
                             <li><i class="fas fa-check text-accent ml-2"></i>راهنمای والدین</li>
                         </ul>
-                        <button class="w-full bg-primary text-white py-2 rounded-lg hover:bg-secondary transition">
+                        <ul class="text-sm text-gray-500 space-y-1 mb-4 lang-en hidden">
+                            <li><i class="fas fa-check text-accent ml-2"></i>Basic Skills Assessment</li>
+                            <li><i class="fas fa-check text-accent ml-2"></i>Educational Needs Identification</li>
+                            <li><i class="fas fa-check text-accent ml-2"></i>Parent Guidance</li>
+                        </ul>
+                        <a href="contact.html" class="block w-full bg-primary text-white py-2 rounded-lg hover:bg-secondary transition text-center">
                             <span class="lang-fa">رزرو آزمون</span>
                             <span class="lang-en hidden">Book Test</span>
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -515,10 +558,10 @@
                     <h3 class="text-xl font-bold mb-4 lang-fa">لینک‌های سریع</h3>
                     <h3 class="text-xl font-bold mb-4 lang-en hidden">Quick Links</h3>
                     <ul class="space-y-2">
-                        <li><a href="index.html" class="text-gray-300 hover:text-white transition">خانه</a></li>
-                        <li><a href="about.html" class="text-gray-300 hover:text-white transition">درباره ما</a></li>
-                        <li><a href="services.html" class="text-gray-300 hover:text-white transition">خدمات</a></li>
-                        <li><a href="tests.html" class="text-gray-300 hover:text-white transition">آزمون‌ها</a></li>
+                        <li><a href="index.html" class="text-gray-300 hover:text-white transition"><span class="lang-fa">خانه</span><span class="lang-en hidden">Home</span></a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-white transition"><span class="lang-fa">درباره ما</span><span class="lang-en hidden">About Us</span></a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-white transition"><span class="lang-fa">خدمات</span><span class="lang-en hidden">Services</span></a></li>
+                        <li><a href="tests.html" class="text-gray-300 hover:text-white transition"><span class="lang-fa">آزمون‌ها</span><span class="lang-en hidden">Tests</span></a></li>
                     </ul>
                 </div>
 
@@ -527,8 +570,8 @@
                     <h3 class="text-xl font-bold mb-4 lang-fa">تماس با ما</h3>
                     <h3 class="text-xl font-bold mb-4 lang-en hidden">Contact Us</h3>
                     <ul class="space-y-2 text-gray-300">
-                        <li><i class="fas fa-map-marker-alt ml-2"></i> تهران، خیابان آزادی</li>
-                        <li><i class="fas fa-phone ml-2"></i> ۰۲۱-۸۸۶۷۸۸۷۷</li>
+                        <li><i class="fas fa-map-marker-alt ml-2"></i> <span class="lang-fa">تهران، خیابان آزادی</span><span class="lang-en hidden">Tehran, Azadi St.</span></li>
+                        <li><i class="fas fa-phone ml-2"></i> <span class="lang-fa">۰۲۱-۸۸۶۷۸۸۷۷</span><span class="lang-en hidden">+98-21-88678877</span></li>
                         <li><i class="fas fa-envelope ml-2"></i> info@iqlsi.com</li>
                     </ul>
                 </div>
