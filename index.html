@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="مرکز پژوهشی روان‌سنجی هوشبهر - خدمات تخصصی آزمون‌های روانشناختی، مشاوره و ارزیابی">
+    <meta name="keywords" content="روان‌سنجی, آزمون هوش, ارزیابی روانشناختی, مشاوره, psychometric, intelligence test">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://image-worker.cranko.cloud/placeholder/32/32?text=H&color=000066">
+    
+    <title>مرکز پژوهشی روان‌سنجی هوشبهر | Hooshbahr Psychometric Research Center</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#000066',
+                        secondary: '#0000AA',
+                        accent: '#4169E1'
+                    },
+                    fontFamily: {
+                        'vazir': ['Vazirmatn', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        [dir="rtl"] body { font-family: 'Vazirmatn', sans-serif; }
+        [dir="ltr"] body { font-family: 'Inter', sans-serif; }
+        
+        .gradient-primary {
+            background: linear-gradient(135deg, #000066 0%, #4169E1 100%);
+        }
+        
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,102,0.15);
+        }
+        
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(0,0,102,0.8) 0%, rgba(0,0,102,0.6) 100%);
+        }
+        
+        /* Smooth scroll */
+        html { scroll-behavior: smooth; }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #000066; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: #0000AA; }
+        
+        /* Loading animation */
+        .skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+        
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        
+        /* Floating animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Language Switcher & Top Bar -->
+    <div class="bg-primary text-white py-2 hidden md:block">
+        <div class="container mx-auto px-4 flex justify-between items-center text-sm">
+            <div class="flex items-center gap-4">
+                <span><i class="fas fa-phone"></i> <span class="lang-fa">۰۲۱-۱۲۳۴۵۶۷۸</span><span class="lang-en hidden">+98-21-12345678</span></span>
+                <span><i class="fas fa-envelope"></i> info@iqlsi.com</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <button onclick="switchLanguage()" class="flex items-center gap-2 hover:text-accent transition">
+                    <i class="fas fa-globe"></i>
+                    <span class="lang-fa">English</span>
+                    <span class="lang-en hidden">فارسی</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <nav class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center gap-3">
+                    <img src="https://image-worker.cranko.cloud/placeholder/60/60?text=Logo&color=000066" alt="Logo" class="w-12 h-12 rounded-full">
+                    <div>
+                        <h1 class="text-primary font-bold text-lg lang-fa">مرکز پژوهشی روان‌سنجی هوشبهر</h1>
+                        <h1 class="text-primary font-bold text-lg lang-en hidden">Hooshbahr Psychometric Research Center</h1>
+                        <p class="text-xs text-gray-500 lang-fa">دانش بنیان</p>
+                        <p class="text-xs text-gray-500 lang-en hidden">Knowledge-Based</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <ul class="hidden lg:flex items-center gap-6">
+                    <li><a href="#home" class="hover:text-primary transition lang-fa">خانه</a><a href="#home" class="hover:text-primary transition lang-en hidden">Home</a></li>
+                    <li><a href="#about" class="hover:text-primary transition lang-fa">درباره ما</a><a href="#about" class="hover:text-primary transition lang-en hidden">About</a></li>
+                    <li><a href="#services" class="hover:text-primary transition lang-fa">خدمات</a><a href="#services" class="hover:text-primary transition lang-en hidden">Services</a></li>
+                    <li><a href="#tests" class="hover:text-primary transition lang-fa">آزمون‌ها</a><a href="#tests" class="hover:text-primary transition lang-en hidden">Tests</a></li>
+                    <li><a href="#team" class="hover:text-primary transition lang-fa">تیم ما</a><a href="#team" class="hover:text-primary transition lang-en hidden">Our Team</a></li>
+                    <li><a href="#contact" class="hover:text-primary transition lang-fa">تماس</a><a href="#contact" class="hover:text-primary transition lang-en hidden">Contact</a></li>
+                    <li>
+                        <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary transition">
+                            <span class="lang-fa">ثبت‌نام آموزش</span>
+                            <span class="lang-en hidden">Register Course</span>
+                        </button>
+                    </li>
+                </ul>
+
+                <!-- Mobile Menu Toggle -->
+                <button id="mobileMenuToggle" class="lg:hidden text-primary text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden lg:hidden pb-4">
+                <ul class="flex flex-col gap-3">
+                    <li><a href="#home" class="block py-2 hover:text-primary transition lang-fa">خانه</a></li>
+                    <li><a href="#about" class="block py-2 hover:text-primary transition lang-fa">درباره ما</a></li>
+                    <li><a href="#services" class="block py-2 hover:text-primary transition lang-fa">خدمات</a></li>
+                    <li><a href="#tests" class="block py-2 hover:text-primary transition lang-fa">آزمون‌ها</a></li>
+                    <li><a href="#team" class="block py-2 hover:text-primary transition lang-fa">تیم ما</a></li>
+                    <li><a href="#contact" class="block py-2 hover:text-primary transition lang-fa">تماس</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section with Slider -->
+    <section id="home" class="relative h-screen">
+        <div class="swiper heroSwiper h-full">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide relative">
+                    <img src="https://image-worker.cranko.cloud/placeholder/1920/800?text=Psychology+Lab&color=000066" alt="Hero 1" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 hero-overlay"></div>
+                    <div class="absolute inset-0 flex items-center justify-center text-white">
+                        <div class="text-center max-w-4xl px-4" data-aos="fade-up">
+                            <h2 class="text-4xl md:text-6xl font-bold mb-4 text-shadow lang-fa">مرکز تخصصی روان‌سنجی</h2>
+                            <h2 class="text-4xl md:text-6xl font-bold mb-4 text-shadow lang-en hidden">Specialized Psychometric Center</h2>
+                            <p class="text-xl md:text-2xl mb-8 lang-fa">ارائه خدمات آزمون‌های روانشناختی و مشاوره تخصصی</p>
+                            <p class="text-xl md:text-2xl mb-8 lang-en hidden">Providing psychological testing and specialized consulting services</p>
+                            <button class="bg-white text-primary px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition">
+                                <span class="lang-fa">شروع کنید</span>
+                                <span class="lang-en hidden">Get Started</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="swiper-slide relative">
+                    <img src="https://image-worker.cranko.cloud/placeholder/1920/800?text=Assessment+Tools&color=4169E1" alt="Hero 2" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 hero-overlay"></div>
+                    <div class="absolute inset-0 flex items-center justify-center text-white">
+                        <div class="text-center max-w-4xl px-4">
+                            <h2 class="text-4xl md:text-6xl font-bold mb-4 text-shadow lang-fa">آزمون‌های استاندارد بین‌المللی</h2>
+                            <h2 class="text-4xl md:text-6xl font-bold mb-4 text-shadow lang-en hidden">International Standard Tests</h2>
+                            <p class="text-xl md:text-2xl mb-8 lang-fa">با بیش از ۱۴ سال تجربه در حوزه سنجش و ارزیابی</p>
+                            <p class="text-xl md:text-2xl mb-8 lang-en hidden">With over 14 years of experience in assessment and evaluation</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="swiper-slide relative">
+                    <img src="https://image-worker.cranko.cloud/placeholder/1920/800?text=Research+Center&color=000066" alt="Hero 3" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 hero-overlay"></div>
+                    <div class="absolute inset-0 flex items-center justify-center text-white">
+                        <div class="text-center max-w-4xl px-4">
+                            <h2 class="text-4xl md:text-6xl font-bold mb-4 text-shadow lang-fa">پژوهش و نوآوری</h2>
+                            <h2 class="text-4xl md:text-6xl font-bold mb-4 text-shadow lang-en hidden">Research & Innovation</h2>
+                            <p class="text-xl md:text-2xl mb-8 lang-fa">توسعه ابزارهای نوین اندازه‌گیری و ارزیابی</p>
+                            <p class="text-xl md:text-2xl mb-8 lang-en hidden">Developing innovative measurement and assessment tools</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next text-white"></div>
+            <div class="swiper-button-prev text-white"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 lang-fa">معرفی مرکز</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 lang-en hidden">About Center</h2>
+                <div class="w-24 h-1 bg-accent mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <img src="https://image-worker.cranko.cloud/placeholder/600/400?text=Research+Center&color=000066" alt="About" class="rounded-lg shadow-xl">
+                </div>
+                <div data-aos="fade-left">
+                    <p class="text-lg text-gray-700 mb-6 leading-relaxed lang-fa">
+                        مرکز پژوهشی روان‌سنجی هوشبهر از سال ۱۴۰۰ فعالیت خود را در حوزه طراحی، توسعه، پژوهش، اجرا و آموزش انواع آزمون‌ها و ابزارهای اندازه‌گیری و ارزیابی‌‌ در حوزه‌های شناختی، روان‌شناختی، شغلی و سازمانی، تحصیلی و خانواده آغاز کرده است.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-6 leading-relaxed lang-en hidden">
+                        Hooshbahr Psychometric Research Center has been operating since 2021 in the design, development, research, implementation, and training of various tests and assessment tools in cognitive, psychological, occupational, organizational, educational, and family domains.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-primary mb-2">۱۴+</div>
+                            <p class="text-gray-600 lang-fa">سال تجربه</p>
+                            <p class="text-gray-600 lang-en hidden">Years Experience</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-primary mb-2">۵۰+</div>
+                            <p class="text-gray-600 lang-fa">پروژه موفق</p>
+                            <p class="text-gray-600 lang-en hidden">Successful Projects</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-primary mb-2">۲۰+</div>
+                            <p class="text-gray-600 lang-fa">آزمون تخصصی</p>
+                            <p class="text-gray-600 lang-en hidden">Specialized Tests</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-primary mb-2">۱۰۰۰+</div>
+                            <p class="text-gray-600 lang-fa">مراجعه کننده</p>
+                            <p class="text-gray-600 lang-en hidden">Clients Served</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 lang-fa">خدمات ما</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 lang-en hidden">Our Services</h2>
+                <div class="w-24 h-1 bg-accent mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white rounded-lg shadow-lg p-8 card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-primary text-5xl mb-4">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-4 lang-fa">سنجش و ارزیابی</h3>
+                    <h3 class="text-xl font-bold text-primary mb-4 lang-en hidden">Assessment & Evaluation</h3>
+                    <p class="text-gray-600 mb-4 lang-fa">
+                        ارزیابی جامع ویژگی‌های روان‌شناختی کودکان، نوجوانان و بزرگسالان با استفاده از آزمون‌های معتبر
+                    </p>
+                    <p class="text-gray-600 mb-4 lang-en hidden">
+                        Comprehensive assessment of psychological characteristics for children, adolescents, and adults using validated tests
+                    </p>
+                    <a href="#" class="text-accent hover:text-primary transition">
+                        <span class="lang-fa">بیشتر بدانید ←</span>
+                        <span class="lang-en hidden">Learn More →</span>
+                    </a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white rounded-lg shadow-lg p-8 card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-primary text-5xl mb-4">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-4 lang-fa">آموزش و کارگاه</h3>
+                    <h3 class="text-xl font-bold text-primary mb-4 lang-en hidden">Training & Workshops</h3>
+                    <p class="text-gray-600 mb-4 lang-fa">
+                        برگزاری دوره‌های آموزشی تخصصی برای متخصصان حوزه روانشناسی و مشاوره
+                    </p>
+                    <p class="text-gray-600 mb-4 lang-en hidden">
+                        Conducting specialized training courses for psychology and counseling professionals
+                    </p>
+                    <a href="#" class="text-accent hover:text-primary transition">
+                        <span class="lang-fa">بیشتر بدانید ←</span>
+                        <span class="lang-en hidden">Learn More →</span>
+                    </a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white rounded-lg shadow-lg p-8 card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-primary text-5xl mb-4">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-4 lang-fa">مشاوره تخصصی</h3>
+                    <h3 class="text-xl font-bold text-primary mb-4 lang-en hidden">Specialized Consulting</h3>
+                    <p class="text-gray-600 mb-4 lang-fa">
+                        ارائه خدمات مشاوره‌ای در زمینه‌های مختلف روانشناسی، تحصیلی و شغلی
+                    </p>
+                    <p class="text-gray-600 mb-4 lang-en hidden">
+                        Providing consulting services in various fields of psychology, education, and career
+                    </p>
+                    <a href="#" class="text-accent hover:text-primary transition">
+                        <span class="lang-fa">بیشتر بدانید ←</span>
+                        <span class="lang-en hidden">Learn More →</span>
+                    </a>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-white rounded-lg shadow-lg p-8 card-hover" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-primary text-5xl mb-4">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-4 lang-fa">پژوهش علمی</h3>
+                    <h3 class="text-xl font-bold text-primary mb-4 lang-en hidden">Scientific Research</h3>
+                    <p class="text-gray-600 mb-4 lang-fa">
+                        انجام پژوهش‌های کاربردی در حوزه روان‌سنجی و توسعه ابزارهای نوین
+                    </p>
+                    <p class="text-gray-600 mb-4 lang-en hidden">
+                        Conducting applied research in psychometrics and developing innovative tools
+                    </p>
+                    <a href="#" class="text-accent hover:text-primary transition">
+                        <span class="lang-fa">بیشتر بدانید ←</span>
+                        <span class="lang-en hidden">Learn More →</span>
+                    </a>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-white rounded-lg shadow-lg p-8 card-hover" data-aos="fade-up" data-aos-delay="500">
+                    <div class="text-primary text-5xl mb-4">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-4 lang-fa">خدمات سازمانی</h3>
+                    <h3 class="text-xl font-bold text-primary mb-4 lang-en hidden">Organizational Services</h3>
+                    <p class="text-gray-600 mb-4 lang-fa">
+                        ارزیابی و توسعه منابع انسانی سازمان‌ها و شرکت‌ها
+                    </p>
+                    <p class="text-gray-600 mb-4 lang-en hidden">
+                        Assessment and development of human resources for organizations and companies
+                    </p>
+                    <a href="#" class="text-accent hover:text-primary transition">
+                        <span class="lang-fa">بیشتر بدانید ←</span>
+                        <span class="lang-en hidden">Learn More →</span>
+                    </a>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="bg-white rounded-lg shadow-lg p-8 card-hover" data-aos="fade-up" data-aos-delay="600">
+                    <div class="text-primary text-5xl mb-4">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-4 lang-fa">تحلیل داده</h3>
+                    <h3 class="text-xl font-bold text-primary mb-4 lang-en hidden">Data Analysis</h3>
+                    <p class="text-gray-600 mb-4 lang-fa">
+                        تحلیل آماری و تفسیر نتایج آزمون‌های روانشناختی
+                    </p>
+                    <p class="text-gray-600 mb-4 lang-en hidden">
+                        Statistical analysis and interpretation of psychological test results
+                    </p>
+                    <a href="#" class="text-accent hover:text-primary transition">
+                        <span class="lang-fa">بیشتر بدانید ←</span>
+                        <span class="lang-en hidden">Learn More →</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tests Section -->
+    <section id="tests" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 lang-fa">آزمون‌های تخصصی</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 lang-en hidden">Specialized Tests</h2>
+                <div class="w-24 h-1 bg-accent mx-auto"></div>
+            </div>
+
+            <div class="swiper testsSwiper" data-aos="fade-up">
+                <div class="swiper-wrapper pb-12">
+                    <!-- Test Card 1 -->
+                    <div class="swiper-slide">
+                        <div class="bg-gray-50 rounded-lg shadow-lg p-6 h-full">
+                            <img src="https://image-worker.cranko.cloud/placeholder/300/200?text=IQ+Test&color=000066" alt="Test" class="w-full h-48 object-cover rounded-lg mb-4">
+                            <h3 class="text-lg font-bold text-primary mb-2 lang-fa">آزمون هوش استنفورد-بینه</h3>
+                            <h3 class="text-lg font-bold text-primary mb-2 lang-en hidden">Stanford-Binet IQ Test</h3>
+                            <p class="text-gray-600 text-sm mb-4 lang-fa">سنجش هوش افراد ۲ تا ۹۰ سال</p>
+                            <p class="text-gray-600 text-sm mb-4 lang-en hidden">Intelligence assessment for ages 2-90</p>
+                            <button class="text-accent hover:text-primary transition">
+                                <span class="lang-fa">اطلاعات بیشتر</span>
+                                <span class="lang-en hidden">More Info</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Test Card 2 -->
+                    <div class="swiper-slide">
+                        <div class="bg-gray-50 rounded-lg shadow-lg p-6 h-full">
+                            <img src="https://image-worker.cranko.cloud/placeholder/300/200?text=Child+Assessment&color=4169E1" alt="Test" class="w-full h-48 object-cover rounded-lg mb-4">
+                            <h3 class="text-lg font-bold text-primary mb-2 lang-fa">پرونده رشدی کودک</h3>
+                            <h3 class="text-lg font-bold text-primary mb-2 lang-en hidden">Child Development Profile</h3>
+                            <p class="text-gray-600 text-sm mb-4 lang-fa">ارزیابی جامع رشد کودکان</p>
+                            <p class="text-gray-600 text-sm mb-4 lang-en hidden">Comprehensive child development assessment</p>
+                            <button class="text-accent hover:text-primary transition">
+                                <span class="lang-fa">اطلاعات بیشتر</span>
+                                <span class="lang-en hidden">More Info</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Test Card 3 -->
+                    <div class="swiper-slide">
+                        <div class="bg-gray-50 rounded-lg shadow-lg p-6 h-full">
+                            <img src="https://image-worker.cranko.cloud/placeholder/300/200?text=Teen+Profile&color=000066" alt="Test" class="w-full h-48 object-cover rounded-lg mb-4">
+                            <h3 class="text-lg font-bold text-primary mb-2 lang-fa">پرونده رشدی نوجوان</h3>
+                            <h3 class="text-lg font-bold text-primary mb-2 lang-en hidden">Adolescent Development Profile</h3>
+                            <p class="text-gray-600 text-sm mb-4 lang-fa">ارزیابی ویژگی‌های نوجوانان</p>
+                            <p class="text-gray-600 text-sm mb-4 lang-en hidden">Assessment of adolescent characteristics</p>
+                            <button class="text-accent hover:text-primary transition">
+                                <span class="lang-fa">اطلاعات بیشتر</span>
+                                <span class="lang-en hidden">More Info</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Test Card 4 -->
+                    <div class="swiper-slide">
+                        <div class="bg-gray-50 rounded-lg shadow-lg p-6 h-full">
+                            <img src="https://image-worker.cranko.cloud/placeholder/300/200?text=Skills+Test&color=4169E1" alt="Test" class="w-full h-48 object-cover rounded-lg mb-4">
+                            <h3 class="text-lg font-bold text-primary mb-2 lang-fa">مهارت‌های ورود به مدرسه</h3>
+                            <h3 class="text-lg font-bold text-primary mb-2 lang-en hidden">School Readiness Skills</h3>
+                            <p class="text-gray-600 text-sm mb-4 lang-fa">کودکان ۴ تا ۶ سال</p>
+                            <p class="text-gray-600 text-sm mb-4 lang-en hidden">For children aged 4-6</p>
+                            <button class="text-accent hover:text-primary transition">
+                                <span class="lang-fa">اطلاعات بیشتر</span>
+                                <span class="lang-en hidden">More Info</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Test Card 5 -->
+                    <div class="swiper-slide">
+                        <div class="bg-gray-50 rounded-lg shadow-lg p-6 h-full">
+                            <img src="https://image-worker.cranko.cloud/placeholder/300/200?text=Cognitive+Test&color=000066" alt="Test" class="w-full h-48 object-cover rounded-lg mb-4">
+                            <h3 class="text-lg font-bold text-primary mb-2 lang-fa">توانش‌های شناختی استرنبرگ</h3>
+                            <h3 class="text-lg font-bold text-primary mb-2 lang-en hidden">Sternberg Cognitive Abilities</h3>
+                            <p class="text-gray-600 text-sm mb-4 lang-fa">سنجش توانایی‌های شناختی</p>
+                            <p class="text-gray-600 text-sm mb-4 lang-en hidden">Cognitive abilities assessment</p>
+                            <button class="text-accent hover:text-primary transition">
+                                <span class="lang-fa">اطلاعات بیشتر</span>
+                                <span class="lang-en hidden">More Info</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 lang-fa">اعضای هیئت مدیره</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 lang-en hidden">Board Members</h2>
+                <div class="w-24 h-1 bg-accent mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Team Member 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://image-worker.cranko.cloud/placeholder/400/300?text=Dr.+Asgari&color=000066" alt="Team" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-2 lang-fa">دکتر علی عسگری</h3>
+                        <h3 class="text-xl font-bold text-primary mb-2 lang-en hidden">Dr. Ali Asgari</h3>
+                        <p class="text-accent font-semibold mb-3 lang-fa">مدیرعامل و رئیس هیئت مدیره</p>
+                        <p class="text-accent font-semibold mb-3 lang-en hidden">CEO & Chairman</p>
+                        <p class="text-gray-600 text-sm lang-fa">روان‌سنج و متخصص آزمون‌های روانشناختی</p>
+                        <p class="text-gray-600 text-sm lang-en hidden">Psychometrician and psychological testing specialist</p>
+                        <div class="flex gap-3 mt-4">
+                            <a href="#" class="text-primary hover:text-accent transition"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-primary hover:text-accent transition"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://image-worker.cranko.cloud/placeholder/400/300?text=Dr.+Tamdani&color=4169E1" alt="Team" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-2 lang-fa">دکتر مجتبی تمدنی</h3>
+                        <h3 class="text-xl font-bold text-primary mb-2 lang-en hidden">Dr. Mojtaba Tamadani</h3>
+                        <p class="text-accent font-semibold mb-3 lang-fa">عضو هیئت مدیره</p>
+                        <p class="text-accent font-semibold mb-3 lang-en hidden">Board Member</p>
+                        <p class="text-gray-600 text-sm lang-fa">مدیر گروه مطالعات سنجش رشد</p>
+                        <p class="text-gray-600 text-sm lang-en hidden">Head of Developmental Assessment Studies</p>
+                        <div class="flex gap-3 mt-4">
+                            <a href="#" class="text-primary hover:text-accent transition"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-primary hover:text-accent transition"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://image-worker.cranko.cloud/placeholder/400/300?text=Ms.+Siapush&color=000066" alt="Team" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-2 lang-fa">معصومه سیاپوش</h3>
+                        <h3 class="text-xl font-bold text-primary mb-2 lang-en hidden">Masoumeh Siapush</h3>
+                        <p class="text-accent font-semibold mb-3 lang-fa">عضو هیئت مدیره - مدیر داخلی</p>
+                        <p class="text-accent font-semibold mb-3 lang-en hidden">Board Member - Internal Manager</p>
+                        <p class="text-gray-600 text-sm lang-fa">مدیریت امور داخلی و هماهنگی</p>
+                        <p class="text-gray-600 text-sm lang-en hidden">Internal affairs management and coordination</p>
+                        <div class="flex gap-3 mt-4">
+                            <a href="#" class="text-primary hover:text-accent transition"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-primary hover:text-accent transition"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 lang-fa">تماس با ما</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 lang-en hidden">Contact Us</h2>
+                <div class="w-24 h-1 bg-accent mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div data-aos="fade-right">
+                    <form class="space-y-6">
+                        <div>
+                            <label class="block text-gray-700 mb-2 lang-fa">نام و نام خانوادگی</label>
+                            <label class="block text-gray-700 mb-2 lang-en hidden">Full Name</label>
+                            <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary transition">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2 lang-fa">ایمیل</label>
+                            <label class="block text-gray-700 mb-2 lang-en hidden">Email</label>
+                            <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary transition">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2 lang-fa">موضوع</label>
+                            <label class="block text-gray-700 mb-2 lang-en hidden">Subject</label>
+                            <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary transition">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2 lang-fa">پیام</label>
+                            <label class="block text-gray-700 mb-2 lang-en hidden">Message</label>
+                            <textarea rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary transition"></textarea>
+                        </div>
+                        <button type="submit" class="bg-primary text-white px-8 py-3 rounded-lg hover:bg-secondary transition w-full md:w-auto">
+                            <span class="lang-fa">ارسال پیام</span>
+                            <span class="lang-en hidden">Send Message</span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div data-aos="fade-left">
+                    <div class="bg-gray-50 rounded-lg p-8 h-full">
+                        <h3 class="text-2xl font-bold text-primary mb-6 lang-fa">اطلاعات تماس</h3>
+                        <h3 class="text-2xl font-bold text-primary mb-6 lang-en hidden">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="text-primary text-xl mt-1">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-1 lang-fa">آدرس</h4>
+                                    <h4 class="font-semibold text-gray-800 mb-1 lang-en hidden">Address</h4>
+                                    <p class="text-gray-600 lang-fa">تهران، خیابان ولیعصر، نرسیده به میدان ونک</p>
+                                    <p class="text-gray-600 lang-en hidden">Tehran, Valiasr St., Before Vanak Square</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="text-primary text-xl mt-1">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-1 lang-fa">تلفن</h4>
+                                    <h4 class="font-semibold text-gray-800 mb-1 lang-en hidden">Phone</h4>
+                                    <p class="text-gray-600" dir="ltr">+98 21 1234 5678</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="text-primary text-xl mt-1">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-1 lang-fa">ایمیل</h4>
+                                    <h4 class="font-semibold text-gray-800 mb-1 lang-en hidden">Email</h4>
+                                    <p class="text-gray-600">info@iqlsi.com</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="text-primary text-xl mt-1">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-1 lang-fa">ساعات کاری</h4>
+                                    <h4 class="font-semibold text-gray-800 mb-1 lang-en hidden">Working Hours</h4>
+                                    <p class="text-gray-600 lang-fa">شنبه تا چهارشنبه: ۹:۰۰ - ۱۶:۰۰</p>
+                                    <p class="text-gray-600 lang-fa">پنجشنبه: ۹:۰۰ - ۱۴:۰۰</p>
+                                    <p class="text-gray-600 lang-en hidden">Saturday to Wednesday: 9:00 AM - 4:00 PM</p>
+                                    <p class="text-gray-600 lang-en hidden">Thursday: 9:00 AM - 2:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social Links -->
+                        <div class="mt-8">
+                            <h4 class="font-semibold text-gray-800 mb-4 lang-fa">شبکه‌های اجتماعی</h4>
+                            <h4 class="font-semibold text-gray-800 mb-4 lang-en hidden">Social Media</h4>
+                            <div class="flex gap-4">
+                                <a href="#" class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center hover:bg-secondary transition">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center hover:bg-secondary transition">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center hover:bg-secondary transition">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center hover:bg-secondary transition">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- About -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 lang-fa">درباره هوشبهر</h3>
+                    <h3 class="text-xl font-bold mb-4 lang-en hidden">About Hooshbahr</h3>
+                    <p class="text-gray-300 lang-fa">
+                        مرکز پژوهشی روان‌سنجی هوشبهر با بیش از ۱۴ سال تجربه در ارائه خدمات تخصصی روانشناسی
+                    </p>
+                    <p class="text-gray-300 lang-en hidden">
+                        Hooshbahr Psychometric Research Center with over 14 years of experience in specialized psychology services
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 lang-fa">دسترسی سریع</h3>
+                    <h3 class="text-xl font-bold mb-4 lang-en hidden">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-gray-300 hover:text-white transition lang-fa">درباره ما</a></li>
+                        <li><a href="#services" class="text-gray-300 hover:text-white transition lang-fa">خدمات</a></li>
+                        <li><a href="#tests" class="text-gray-300 hover:text-white transition lang-fa">آزمون‌ها</a></li>
+                        <li><a href="#team" class="text-gray-300 hover:text-white transition lang-fa">تیم ما</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 lang-fa">خدمات ما</h3>
+                    <h3 class="text-xl font-bold mb-4 lang-en hidden">Our Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition lang-fa">آزمون‌های روانشناختی</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition lang-fa">مشاوره تخصصی</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition lang-fa">کارگاه‌های آموزشی</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition lang-fa">پژوهش علمی</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 lang-fa">خبرنامه</h3>
+                    <h3 class="text-xl font-bold mb-4 lang-en hidden">Newsletter</h3>
+                    <p class="text-gray-300 mb-4 lang-fa">برای دریافت آخرین اخبار و رویدادها ثبت نام کنید</p>
+                    <p class="text-gray-300 mb-4 lang-en hidden">Subscribe for latest news and events</p>
+                    <form class="flex">
+                        <input type="email" placeholder="ایمیل شما" class="px-4 py-2 rounded-r-lg text-gray-800 flex-1">
+                        <button type="submit" class="bg-accent hover:bg-opacity-90 px-4 py-2 rounded-l-lg transition">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-300 lang-fa">© ۱۴۰۳ مرکز پژوهشی روان‌سنجی هوشبهر. تمامی حقوق محفوظ است.</p>
+                <p class="text-gray-300 lang-en hidden">© 2024 Hooshbahr Psychometric Research Center. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-6 left-6 bg-primary text-white w-12 h-12 rounded-full shadow-lg hover:bg-secondary transition opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Initialize Swiper for Hero
+        const heroSwiper = new Swiper('.heroSwiper', {
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            }
+        });
+
+        // Initialize Swiper for Tests
+        const testsSwiper = new Swiper('.testsSwiper', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                },
+                768: {
+                    slidesPerView: 3,
+                },
+                1024: {
+                    slidesPerView: 4,
+                },
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Language Switcher
+        let currentLang = 'fa';
+        
+        function switchLanguage() {
+            currentLang = currentLang === 'fa' ? 'en' : 'fa';
+            document.documentElement.lang = currentLang;
+            document.documentElement.dir = currentLang === 'fa' ? 'rtl' : 'ltr';
+            
+            // Toggle language elements
+            document.querySelectorAll('.lang-fa').forEach(el => {
+                el.classList.toggle('hidden', currentLang !== 'fa');
+            });
+            document.querySelectorAll('.lang-en').forEach(el => {
+                el.classList.toggle('hidden', currentLang !== 'en');
+            });
+            
+            // Update body font
+            if (currentLang === 'en') {
+                document.body.style.fontFamily = "'Inter', sans-serif";
+            } else {
+                document.body.style.fontFamily = "'Vazirmatn', sans-serif";
+            }
+        }
+
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.remove('opacity-0', 'invisible');
+                backToTop.classList.add('opacity-100', 'visible');
+            } else {
+                backToTop.classList.add('opacity-0', 'invisible');
+                backToTop.classList.remove('opacity-100', 'visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth Scroll for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Form Submission (Demo)
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert(currentLang === 'fa' ? 'فرم با موفقیت ارسال شد!' : 'Form submitted successfully!');
+            });
+        });
+
+        // Add loading animation on page load
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+        });
+
+        // Performance optimization: Lazy load images
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src || img.src;
+                        img.classList.add('loaded');
+                        observer.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img').forEach(img => imageObserver.observe(img));
+        }
+    </script>
+</body>
+</html>
